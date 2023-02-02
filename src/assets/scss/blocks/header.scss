@@ -1,8 +1,14 @@
 .header {
-    @include breakpoint($xl-bp) {
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-    }
+      z-index: 11;
+      padding-top: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include breakpoint($xl-bp) {
+            padding-top: 2.6rem;
+      }
 }

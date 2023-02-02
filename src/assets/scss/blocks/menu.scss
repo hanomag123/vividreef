@@ -3,20 +3,22 @@
   top: 0;
   right: 0;
   z-index: 1;
-  transform: translateX(100%);
+  transform: translate3d(100%, 0, 0);
   height: 100%;
-  width: 30%;
-  background-color: lightblue;
-  transition: all 1s ease;
-  display: none;
+  background-color: var(--white);
+  transition: all 0.7s ease;
+  padding-top: 17rem;
+  padding-bottom: 8.1rem;
+  @apply fixed top-0 right-0 w-max h-full overflow-hidden z-10;
+  overflow: auto;
   @include breakpoint($xl-bp) {
-    display: block;
-    height: 100vh;
+    padding-top: 12rem;
+    padding-bottom: 6.2rem;
   }
 }
 
 .menu--open {
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
 }
 
 // .menu-button {
@@ -34,28 +36,30 @@
 // }
 
 .menu-button {
-  width: 4rem;
-  height: 3.4rem;
+  width: 3rem;
+  height: 1.8rem;
   background-color: transparent;
   border: 0;
 
-  z-index: 4;
-  display: none;
-  position: relative;
+  z-index: 15;
+  position: absolute;
+  top: 3.5rem;
+  right: 6rem;
+  
   .burger-button-close {
     #first-line-burger,
     #second-line-burger,
     #third-line-burger {
         width: 100%;
-        height: 0.2rem;
-        border-radius: 0.1rem;
-        background-color: black;
+        height: 0.3rem;
+        border-radius: 0.2rem;
+        background-color: var(--white);
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translateX(-50%);
         transform-origin: center center;
-        transition: transform 0.4s ease, opacity 0.4s ease;
+        transition: all 0.3s;
     }
 
     #first-line-burger {
@@ -64,26 +68,46 @@
     #third-line-burger {
         top: unset;
         bottom: 0%;
+        left: unset;
+        right: 0;
+        width: 50%;
+        transform: translateX(0);
     }
   }
   @include breakpoint($xl-bp) {
-    display: block;
-    margin-left: 3rem;
+    width: 3rem;
+    height: 1.5rem;
+    top: 2.8rem;
+    right: 2rem;
   }
-  @include breakpoint($sm-bp) {
-    margin-left: 0;
-    width: 2rem;
-    height: 2rem;
-    margin-right: 0.5rem;
+  &:hover {
+    #third-line-burger {
+      top: unset;
+      bottom: 0%;
+      left: unset;
+      right: 0;
+      width: 100%;
+      transform: translateX(0);
+  }
   }
 }
 
 .header__menu-button--active,
 .menu-button--active {
+  width: 4.4rem;
+  right: 5.5rem;
+  @include breakpoint($xl-bp) {
+    width: 3rem;
+    right: 2rem;
+  }
   .burger-button-close {
+    #first-line-burger,#third-line-burger {
+      height: 0.2rem;
+    }
     #first-line-burger {
       top: 50%;
       transform: translateX(-50%) rotate(45deg);
+      background-color: var(--black);
     }
     #second-line-burger {
       transform: translateX(100%);
@@ -91,8 +115,12 @@
     }
     #third-line-burger {
       top: 50%;
+      left: 50%;
+      right: unset;
       bottom: 0;
+      width: 100%;
       transform: translateX(-50%) rotate(-45deg);
+      background-color: var(--black);
     }
   }
 }
@@ -103,8 +131,10 @@
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.6);
 }

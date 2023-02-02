@@ -1,0 +1,195 @@
+.bg-schedule {
+  background-image: url('../images/schedule/schedule-1.jpg');
+}
+
+.schedule-button {
+  border-radius: 1rem;
+  background-color: var(--blue3);
+  padding: 1.85rem;
+  text-align: center;
+  color: var(--white);
+  display: block;
+  width: 100%;
+  transition: box-shadow .3s;
+
+  &:hover {
+    box-shadow: 0px 0.4rem 1.6rem rgba(16, 164, 189, 0.6);
+  }
+  @include breakpoint($xl-bp) {
+    padding: 1.95rem;
+  }
+}
+.schedule-button.active {
+  background-color: var(--blue);
+}
+
+
+.breadcrumbs {
+  width: max-content;
+  margin: 0 auto;
+
+  ul {
+    display: flex;
+
+    li {
+      position: relative;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      &::before {
+        content: '';
+        height: 80%;
+        width: 0.1rem;
+        background-color: var(--white);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+      &:first-child {
+        padding-left: 0;
+      &::before {
+        content: unset;
+      }
+      }
+      a {
+        /* Desktop/text 2 */
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 140%;
+        /* identical to box height, or 20px */
+
+
+        /* белый */
+
+        color: var(--white);
+        @include breakpoint($sm-bp) {
+          font-size: 1.2rem;
+          line-height: 1.5rem;
+        }
+      }
+      &:last-child {
+        a {
+          color: var(--blue);
+        }
+      }
+    }
+  }
+}
+
+.gallery-thumbs {
+  margin-left: 0;
+  width: 28.8rem;
+  @include breakpoint($sm-bp) {
+    width: 17.3rem;
+  }
+  .swiper-slide {
+    cursor: pointer;
+  }
+}
+
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  border: 0.1rem solid var(--gray);
+  border-radius: 1rem;
+  background-color: var(--white);
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-image: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L4.75671 5.67412C5.15395 6.1155 5.84605 6.1155 6.24329 5.67412L10 1.5' stroke='%23616465' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+  transition: transform .3s;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  // border: 6px solid transparent;
+  // border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  // border-color: transparent transparent #fff transparent;
+  transform: translateY(-50%) rotate(180deg);
+}
+.select-arrow-active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 0;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: var(--gray);
+  padding: 2.2rem;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 140%;  
+}
+.select-items > div {
+  color: var(--black);
+  padding: 1rem 1.2rem;
+}
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: var(--white);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border: 0.1rem solid var(--gray);
+  border-top: 0;
+  overflow: hidden;
+  box-shadow: 0px 0.5rem 1rem rgba(19, 33, 42, 0.15);
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: var(--blue3);
+}
+.select-selected--active {
+  color: var(--black);
+}
+
+.date-container {
+  position: relative;
+  width: min-content;
+  height: min-content;
+  &::before {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 14C11.7167 14 11.4793 13.904 11.288 13.712C11.096 13.5207 11 13.2833 11 13C11 12.7167 11.096 12.479 11.288 12.287C11.4793 12.0957 11.7167 12 12 12C12.2833 12 12.521 12.0957 12.713 12.287C12.9043 12.479 13 12.7167 13 13C13 13.2833 12.9043 13.5207 12.713 13.712C12.521 13.904 12.2833 14 12 14ZM8 14C7.71667 14 7.479 13.904 7.287 13.712C7.09567 13.5207 7 13.2833 7 13C7 12.7167 7.09567 12.479 7.287 12.287C7.479 12.0957 7.71667 12 8 12C8.28333 12 8.521 12.0957 8.713 12.287C8.90433 12.479 9 12.7167 9 13C9 13.2833 8.90433 13.5207 8.713 13.712C8.521 13.904 8.28333 14 8 14ZM16 14C15.7167 14 15.4793 13.904 15.288 13.712C15.096 13.5207 15 13.2833 15 13C15 12.7167 15.096 12.479 15.288 12.287C15.4793 12.0957 15.7167 12 16 12C16.2833 12 16.5207 12.0957 16.712 12.287C16.904 12.479 17 12.7167 17 13C17 13.2833 16.904 13.5207 16.712 13.712C16.5207 13.904 16.2833 14 16 14ZM12 18C11.7167 18 11.4793 17.904 11.288 17.712C11.096 17.5207 11 17.2833 11 17C11 16.7167 11.096 16.4793 11.288 16.288C11.4793 16.096 11.7167 16 12 16C12.2833 16 12.521 16.096 12.713 16.288C12.9043 16.4793 13 16.7167 13 17C13 17.2833 12.9043 17.5207 12.713 17.712C12.521 17.904 12.2833 18 12 18ZM8 18C7.71667 18 7.479 17.904 7.287 17.712C7.09567 17.5207 7 17.2833 7 17C7 16.7167 7.09567 16.4793 7.287 16.288C7.479 16.096 7.71667 16 8 16C8.28333 16 8.521 16.096 8.713 16.288C8.90433 16.4793 9 16.7167 9 17C9 17.2833 8.90433 17.5207 8.713 17.712C8.521 17.904 8.28333 18 8 18ZM16 18C15.7167 18 15.4793 17.904 15.288 17.712C15.096 17.5207 15 17.2833 15 17C15 16.7167 15.096 16.4793 15.288 16.288C15.4793 16.096 15.7167 16 16 16C16.2833 16 16.5207 16.096 16.712 16.288C16.904 16.4793 17 16.7167 17 17C17 17.2833 16.904 17.5207 16.712 17.712C16.5207 17.904 16.2833 18 16 18ZM5 22C4.45 22 3.979 21.8043 3.587 21.413C3.19567 21.021 3 20.55 3 20V6C3 5.45 3.19567 4.97933 3.587 4.588C3.979 4.196 4.45 4 5 4H6V3C6 2.71667 6.09567 2.479 6.287 2.287C6.479 2.09567 6.71667 2 7 2C7.28333 2 7.521 2.09567 7.713 2.287C7.90433 2.479 8 2.71667 8 3V4H16V3C16 2.71667 16.096 2.479 16.288 2.287C16.4793 2.09567 16.7167 2 17 2C17.2833 2 17.5207 2.09567 17.712 2.287C17.904 2.479 18 2.71667 18 3V4H19C19.55 4 20.021 4.196 20.413 4.588C20.8043 4.97933 21 5.45 21 6V20C21 20.55 20.8043 21.021 20.413 21.413C20.021 21.8043 19.55 22 19 22H5ZM5 20H19V10H5V20Z' fill='%23616465'/%3E%3C/svg%3E%0A");
+    position: absolute;
+    height: 2.4rem;
+    width: 2.4rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,130 @@
+.date-input {
+  &:focus {
+    outline: none;
+  }
+}
+.date-input.active {
+
+}
+.qs-controls {
+  display: grid;
+  grid-template-columns: 1fr max-content max-content;
+  justify-content: flex-start;
+  gap: 0;
+  height: 3rem;
+  background-color: var(--white);
+}
+.qs-left {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  &::before {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.74512 0.5L0.521621 6L6.74512 11.5' stroke='%230A0A0A' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    width: 0.8rem;
+    height: 1.2rem;
+    display: block;
+  }
+  &::after {
+    content: unset;
+    width: 0;
+    height: 0;
+  }
+}
+.qs-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    background-color: var(--blue2);
+  }
+}
+.qs-right {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  margin-right: 1.1rem;
+  &::before {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.564453 11.5L6.78795 6L0.564453 0.5' stroke='%230A0A0A' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    width: 0.8rem;
+    height: 1.2rem;
+    display: block;
+  }
+  &::after {
+    content: unset;
+    width: 0;
+    height: 0;
+  }
+}
+.qs-month-year {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 140%;
+}
+.qs-month-year:not(.qs-disabled-year-overlay):hover {
+  border-bottom: 0;
+}
+
+.qs-datepicker-container {
+  top: calc(100% - 1rem)!important;
+  width: 100%;
+  /* Desktop/text */
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 140%;
+  /* or 22px */
+
+  text-align: center;
+
+  /* черный */
+
+  color: var(--black);
+  border: 0.1rem solid var(--gray);
+  border-top: 0;
+  border-radius: 1rem;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+
+  .qs-squares {
+    padding-top: 1.8rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 2.3rem;
+    background-color: var(--white);
+  }
+  .qs-active {
+    background-color: var(--blue3);
+  }
+  .qs-day {
+    font-weight: 500;
+    color: var(--black);
+  }
+  .qs-current {
+    text-decoration: none;
+    font-weight: 400;
+  }
+  .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {
+    background-color: var(--blue2);
+  }
+  .qs-range-middle {
+    background-color: var(--blue3);
+  }
+  .qs-num {
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+  .qs-disabled, .qs-outside-current-month {
+    color: var(--gray);
+  }
+  .qs-outside-current-month[data-direction="1"] {
+    display: none;
+  }
+}
