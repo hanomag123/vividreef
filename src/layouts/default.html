@@ -9,35 +9,40 @@
     {{> sprite }}
 
     <div class="page">
-        
-        <!-- Header -->
 
-        {{> header }}
+        <!-- Preloader-->
 
-        <!-- Main content -->
-        <main>
+        <div class="preloader" id="preloader">
+            <div class="spin">
+                <div class="lds-ring"><div></div><div></div><div></div><div class="logo"></div></div>
+            </div>
+        </div>
+
 
             {{> body }}
-
-        </main>
 
         <!-- Footer -->
         {{> footer }}
 
     </div>
 
-        <!-- Modal-->
-        {{> modal}}
+    <!-- Modal-->
+    {{> modal}}
 
-        <!-- FeedBack-->
-        {{> feedback}}
+    <!-- FeedBack-->
+    {{> feedback}}
+
+    <!-- Order-->
+    {{> order-modal}}
 
     <!-- JS -->
-    <!-- <script src="https://code.jquery.com/jquery-2.1.4.js"></script> -->
-    <!-- <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI/6e6d051d47b598ebab05857545f242caf2b4b48c/dist/semantic.min.js"></script> -->
-    <!-- <script src="assets/js/jquery214.js"></script> -->
     <script src="assets/js/vendor.js"></script>
     <script src="assets/js/app.js"></script>
+
+    
+    <script>
+        window.onload = function() { preloader.style.opacity = "0"; setTimeout(() => preloader.style.display = 'none', 300);}
+    </script>
 </body>
 
 </html>

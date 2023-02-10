@@ -1,17 +1,20 @@
+
+@import "fonts";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @import "vars";
 @import "mixins";
-@import "fonts";
+
 @import "vendor/reset";
 
 html {
   box-sizing: border-box;
   font-size: calc(100vw / 1920 * 10);
   @include breakpoint($cos-bp) {
-    font-size: calc(100vw / 1440 * 10);
+    // font-size: calc(100vw / 1440 * 10);
   }
 
   @include breakpoint($xl-bp) {
@@ -27,7 +30,21 @@ html {
 
 ::-webkit-scrollbar {width: 0;}
 
-
+.custom-scroll {
+  &::-webkit-scrollbar {
+    width: 0.4rem;
+    background-color: #D0D3D4;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height: 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #899095;
+    border-radius: 1rem;
+  }
+}
 
 *,
 *:before,
@@ -39,6 +56,19 @@ html {
 
 body {
 height: 100%;
+&::-webkit-scrollbar {
+  width: 0.4rem;
+  background-color: #D0D3D4;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+&::-webkit-scrollbar:horizontal {
+  height: 0;
+}
+&::-webkit-scrollbar-thumb {
+  background-color: #899095;
+  border-radius: 1rem;
+}
 }
 
 img {
@@ -57,11 +87,14 @@ svg {
 /* Blocks */
 
 @import './blocks/menu.scss';
-@import './blocks/swiper.scss';
+// @import './blocks/swiper.scss';
 @import './blocks/main.scss';
 @import './blocks/header.scss';
 @import './blocks/schedule.scss';
 @import './blocks/date.scss';
+@import './blocks/route.scss';
+@import './blocks/about.scss';
+@import './blocks/news.scss';
 
 
 
@@ -138,6 +171,9 @@ svg {
 
   p + p {
     margin-top: 2rem;
+    @include breakpoint($sm-bp) {
+      margin-top: 0;
+    }
   }
   @include breakpoint($xl-bp) {
     font-size: 1.4rem;
@@ -162,4 +198,31 @@ svg {
     font-size: 1.2rem;
     line-height: 1.5rem;
   }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.custom-after {
+  &::after {
+    content: attr(data-after);
+    @apply page-text1 text-gray;
+  }
+}
+
+/* Reveal effect for lazyloaded imgs */
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
 }

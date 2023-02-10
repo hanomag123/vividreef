@@ -5,10 +5,17 @@
       width: 100%;
       z-index: 11;
       padding-top: 3rem;
+      padding-bottom: 3rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       @include breakpoint($xl-bp) {
             padding-top: 2.6rem;
+      }
+}
+
+.page-dark {
+      .header {
+            border-bottom: 0.1rem solid var(--bordr);
       }
 }

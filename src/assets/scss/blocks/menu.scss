@@ -92,6 +92,18 @@
   }
 }
 
+.page-dark {
+.menu-button {
+  .burger-button-close {
+    #first-line-burger,
+    #second-line-burger,
+    #third-line-burger {
+      background-color: var(--black);
+    }
+  }
+}
+}
+
 .header__menu-button--active,
 .menu-button--active {
   width: 4.4rem;

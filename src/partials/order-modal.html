@@ -1,0 +1,55 @@
+<div class="regModal bg-[rgba(0,0,0,0.6)] fixed top-0 left-0 w-full h-full z-[1000] flex items-center justify-center opacity-0 px-20"
+  id="order-modal" hidden>
+
+  <div class="p-60 xl:px-20 xl:py-50 relative rounded-20 bg-white w-max h-full max-h-[74rem] xl:max-h-[60rem] overflow-auto">
+    <button class="close-button absolute top-20 xl:top-15 right-20 xl:right-15">
+      <svg class="w-17 h-17 object-contain">
+        <use href='#crossIcon'></use>
+      </svg>
+    </button>
+
+    <form action="#" class="flex flex-col gap-30 xl:gap-20 max-w-[40rem]">
+      <div class="space-y-20 xl:space-y-10">
+        <h2 class="page-h2 w-[110%] xl:w-full">Бронирование тура</h2>
+        <div class="page-text2 grid grid-cols-maxfr gap-10">
+          <div>Маршрут</div>
+          <input class="pointer-events-none text-14 leading-20 font-bold" type="hidden" name="MYtitle" value="">
+          <div class="text-16 sm:text-14 leading-22 sm:leading-20 font-bold" data-name="MYtitle"></div>
+          <div>Дата</div>
+          <input class="pointer-events-none text-14 leading-20 font-bold" type="hidden" name="MYdata" value="">
+          <div class="text-16 sm:text-14 leading-22 sm:leading-20 font-bold" data-name="MYdata"></div>
+          <div>Цена</div>
+          <div class="text-16 sm:text-14 leading-22 sm:leading-20 font-bold custom-after" data-name="MYpricePerPerson" data-after=" / персона"></div>
+          <input class="pointer-events-none text-14 leading-20 font-bold w-50" type="hidden" name="MYpricePerPerson" value="">
+        </div>
+      </div>
+
+      <div class="space-y-10">
+        <div class="input-container relative w-full">
+          <input type="text" name="name" class="custom-input w-full" placeholder="Ваше имя" required>
+        </div>
+  
+        <div class="input-container relative w-full">
+          <input type="tel" name="tel" class="custom-input w-full" placeholder="Телефон" required>
+        </div>
+  
+        <div class="input-container relative w-full">
+          <input type="email" name="mail" class="custom-input w-full" placeholder="E-mail" required>
+        </div>
+
+        <div class="input-container relative w-full">
+          <input type="number" name="numberOfpeople" class="custom-input w-full" placeholder="Количество человек" required>
+        </div>
+      </div>
+
+      <div class="space-y-10">
+        <div class="page-text2 text-center">
+          Нажимая кнопку отправить, вы соглашаетесь на обработку персональных данных
+        </div>
+  
+        <button type="submit" class="page-button !w-full page-text1">Отправить</button>
+      </div>
+
+    </form>
+  </div>
+</div>

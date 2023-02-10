@@ -1,0 +1,21 @@
+.image-rotate-left {
+  position: absolute;
+  top: 2.5rem;
+  left: -18.5rem;
+  transform: rotate(-4deg);
+  @include breakpoint($xl-bp) {
+    position: static;
+    transform: rotate(0);
+  }
+}
+
+.image-rotate-right {
+  position: absolute;
+  top: 2.5rem;
+  right: -18.5rem;
+  transform: rotate(4deg);
+  @include breakpoint($xl-bp) {
+    position: static;
+    transform: rotate(0);
+  }
+}

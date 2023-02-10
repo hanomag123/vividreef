@@ -1,0 +1,284 @@
+<!-- Header -->
+
+<div>
+
+  {{> header }}
+  
+</div>
+
+<!-- Main content -->
+<main>
+
+
+<section class="pt-132 sm:pt-95 pb-60 sm:pb-20 container relative">
+
+  <div class="space-y-40 xl:space-y-30">
+    <div class="breadcrumbs">
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Расписание</a></li>
+        <li><a href="#">Северные Рэки</a></li>
+      </ul>
+    </div>
+
+    <h1
+      class="page-h1 min-h-[8.4rem] flex items-center justify-center text-white py-6 px-76 sm:px-14 mx-auto w-max xl:w-auto sm:w-full relative text-center brnone sm:brblock">
+      <span class="custom-border custom-border--white left-0"></span>
+      Северные Рэки
+      <span class="custom-border custom-border--white right-0 rotate-180"></span>
+    </h1>
+  </div>
+
+  <form data-id="My-order-modal" class="route bg-blue2 rounded-10 mt-158 sm:mt-200 grid grid-cols-maxfr xl:flex xl:flex-col overflow-hidden">
+    <input type="hidden" name="MYtitle" value="Северные Рэки">
+    <ul class="route__list divide-x-1 xl:divide-x-0 xl:divide-y-1 divide-solid divide-blue3">
+      <li class="route__item">
+        <div class="page-text1 sm:!text-14 flex gap-10 items-center moonIcon">
+          Количество дней
+        </div>
+      </li>
+      <li class="route__item">
+        <div class="page-text1 sm:!text-14 flex gap-10 items-center mansIcon">
+          Свободных мест
+        </div>
+        <div class="page-h4 sm:!text-20 sm:!leading-24 text-center">12</div>
+      </li>
+      <li class="route__item">
+        <div class="page-text1 sm:!text-14 flex gap-10 items-center dateIcon">
+          Дата
+        </div>
+        <div class="page-h4 sm:!text-20 sm:!leading-24 text-center">12января <span class="sm:hidden">2023</span > - 20 января 2023</div>
+          <input type="hidden" name="MYdata" value="12 января 2023 - 20 января 2023">
+      </li>
+      <li class="route__item">
+        <div class="page-text1 sm:!text-14 flex gap-10 items-center priceIcon">
+          Цена
+        </div>
+        <div data-after=" / персона" class="page-h4 sm:!text-20 sm:!leading-24 text-center custom-after">1120 $</div>
+        <input type="hidden" name="MYpricePerPerson" value="1120 $">
+      </li>
+    </ul>
+    <button type="submit" class="bg-blue page-text1 px-87 text-white py-27">Забронировать</button>
+  </form>
+
+  <div class="background absolute top-0 left-0 w-full h-full -z-10">
+    <picture>
+      <source srcset="./assets/images/route/route-1-mobile.jpg" media="(max-width:500px)">
+      <img class="w-full h-full object-cover" src="./assets/images/route/route-1.jpg" alt="">
+    </picture>
+  </div>
+</section>
+
+<section class="container mt-100 xl:mt-70">
+  <div class="mx-auto max-w-[1240px]">
+    <h1 class="page-h1 text-center sm:text-start">Маршрут</h1>
+
+    <ul class="space-y-60 mt-40 sm:mt-30 days-list">
+
+      <li class="days-list__item grid grid-cols-maxfr cos:grid-cols-2 xl:flex xl:flex-col-reverse gap-x-100 gap-y-20">
+        <div class="w-[56rem] cos:w-full h-[32rem] cos:h-[45rem] sm:h-[19rem] rounded-10 overflow-hidden bg-blue2">
+          <img class="w-full h-full object-cover" src="./assets/images/route/route-2.jpg" alt="">
+        </div>
+
+        <div class="days-list__block">
+          <h2 class="page-h4 mt-30 sm:mt-15">Прибытие</h2>
+          <ul class="page-text1 mt-20 sm:mt-10 custom-list">
+            <li>После прибытия в Хургаду – трансфер на яхту.</li>
+            <li>Заселение, ужин и первая ночь на яхте в порту.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="days-list__item grid grid-cols-maxfr cos:grid-cols-2 xl:flex xl:flex-col-reverse gap-x-100 gap-y-20">
+        <div class="w-[56rem] cos:w-full h-[32rem] cos:h-[45rem] sm:h-[19rem] rounded-10 overflow-hidden bg-blue2">
+          <img class="w-full h-full object-cover" src="./assets/images/route/route-3.jpg" alt="">
+        </div>
+
+        <div class="days-list__block">
+          <h2 class="page-h4 mt-30 sm:mt-15">Отправление</h2>
+          <ul class="page-text1 mt-20 sm:mt-10 custom-list">
+            <li>Отправление утром на Умм Гамар и Абу Нухас.</li>
+            <li>Инструктаж на яхте.</li>
+            <li>Первое погружение, брифинг по безопасности и оборудованию.</li>
+            <li>Два погружения на Умм Гамаре (дрифт).</li>
+            <li>Ночное погружение на Абу Нухасе.</li>
+          </ul>
+        </div>
+      </li>
+      
+      <li class="days-list__item grid grid-cols-maxfr cos:grid-cols-2 xl:flex xl:flex-col-reverse gap-x-100 gap-y-20">
+        <div class="w-[56rem] cos:w-full h-[32rem] cos:h-[45rem] sm:h-[19rem] rounded-10 overflow-hidden bg-blue2">
+          <img class="w-full h-full object-cover" src="./assets/images/route/route-4.jpg" alt="">
+        </div>
+
+        <div class="days-list__block">
+          <h2 class="page-h4 mt-30 sm:mt-15">Абу Нухас</h2>
+          <ul class="page-text1 mt-20 sm:mt-10 custom-list">
+            <li>Три погружения на Абу Нухасе: Жаннис Д., Карнатик, Крисула K.</li>
+            <li>Ночной дайв на Шааб Махмуд.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="days-list__item grid grid-cols-maxfr cos:grid-cols-2 xl:flex xl:flex-col-reverse gap-x-100 gap-y-20">
+        <div class="w-[56rem] cos:w-full h-[32rem] cos:h-[45rem] sm:h-[19rem] rounded-10 overflow-hidden bg-blue2">
+          <img class="w-full h-full object-cover" src="./assets/images/route/route-5.jpg" alt="">
+        </div>
+
+        <div class="days-list__block">
+          <h2 class="page-h4 mt-30 sm:mt-15">Шааб Махмуд</h2>
+          <ul class="page-text1 mt-20 sm:mt-10 custom-list">
+            <li>Три погружения на Абу Нухасе: Жаннис Д., Карнатик, Крисула K.</li>
+            <li>Ночной дайв на Шааб Махмуд.</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="days-list__item grid grid-cols-maxfr cos:grid-cols-2 xl:flex xl:flex-col-reverse gap-x-100 gap-y-20">
+        <div class="w-[56rem] cos:w-full h-[32rem] cos:h-[45rem] sm:h-[19rem] rounded-10 overflow-hidden bg-blue2">
+          <img class="w-full h-full object-cover" src="./assets/images/route/route-6.jpg" alt="">
+        </div>
+
+        <div class="days-list__block">
+          <h2 class="page-h4 mt-30 sm:mt-15">Тистлегорм</h2>
+          <ul class="page-text1 mt-20 sm:mt-10 custom-list">
+            <li>Три погружения на Тистлегорме</li>
+            <li>Ночной дайв на Малом Губале</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="days-list__item grid grid-cols-maxfr cos:grid-cols-2 xl:flex xl:flex-col-reverse gap-x-100 gap-y-20">
+        <div class="w-[56rem] cos:w-full h-[32rem] cos:h-[45rem] sm:h-[19rem] rounded-10 overflow-hidden bg-blue2">
+          <img class="w-full h-full object-cover" src="./assets/images/route/route-7.jpg" alt="">
+        </div>
+
+        <div class="days-list__block">
+          <h2 class="page-h4 mt-30 sm:mt-15">Розали Мюллер</h2>
+          <ul class="page-text1 mt-20 sm:mt-10 custom-list">
+            <li>Розали Мюллер (зависит от погодных условий)</li>
+            <li>Малый Губал</li>
+            <li>Риф Карлес</li>
+            <li>Шааб Эль Эрг (дополнительный взнос за вход в заповедник)</li>
+            <li>Ночной дайв</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="days-list__item grid grid-cols-maxfr cos:grid-cols-2 xl:flex xl:flex-col-reverse gap-x-100 gap-y-20">
+        <div class="w-[56rem] cos:w-full h-[32rem] cos:h-[45rem] sm:h-[19rem] rounded-10 overflow-hidden bg-blue2">
+          <img class="w-full h-full object-cover" src="./assets/images/route/route-8.jpg" alt="">
+        </div>
+
+        <div class="days-list__block">
+          <h2 class="page-h4 mt-30 sm:mt-15">Возврат</h2>
+          <ul class="page-text1 mt-20 sm:mt-10 custom-list">
+            <li>2 погружения на Малом Гифтуне</li>
+            <li>Возврат в порт.</li>
+            <li>Для безопасности каждого дайвера, обеспечено минимум 20 часов между последним погружением и полетом.</li>
+            <li>Передача учебных материалов/ видео о сафари.</li>
+          </ul>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<section class="container mt-200 xl:mt-70">
+  <h2 class="page-h1 text-center">На чем отправимся</h2>
+
+    
+  <div class="grid grid-cols-maxfr xl:flex xl:flex-col-reverse gap-60 xl:gap-30 mt-40 sm:mt-30">
+    <div class="swiper gallery-top2 rounded-10 w-[90rem] xl:w-full h-[52.2rem] sm:h-[27.8rem] relative" data-thumbsgallery="2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide gallery-top-slide">
+          <img class="w-full h-full object-cover" src="./assets/images/ship/ship-1.jpg" alt="tour">
+        </div>
+        <div class="swiper-slide gallery-top-slide">
+          <img class="w-full h-full object-cover" src="./assets/images/ship/ship-2.jpg" alt="tour">
+        </div>
+        <div class="swiper-slide gallery-top-slide">
+          <img class="w-full h-full object-cover" src="./assets/images/ship/ship-3.jpg" alt="tour">
+        </div>
+        <div class="swiper-slide gallery-top-slide">
+          <img class="w-full h-full object-cover" src="./assets/images/ship/ship-4.jpg" alt="tour">
+        </div>
+        <div class="swiper-slide gallery-top-slide">
+          <img class="w-full h-full object-cover" src="./assets/images/ship/ship-5.jpg" alt="tour">
+        </div>
+        <div class="swiper-slide gallery-top-slide">
+          <img class="w-full h-full object-cover" src="./assets/images/ship/ship-6.jpg" alt="tour">
+        </div>
+      </div>
+      <div
+        class="absolute left-[50%] translate-x-[-50%] bottom-30 sm:bottom-7 w-[calc(100%_-_6rem)] sm:w-[calc(100%_-_2rem)] p-20 sm:p-10 bg-blue2 z-10 flex items-center justify-between rounded-10">
+        <div class="swiper gallery-thumbs2" data-thumbs="2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="bg-blue3 rounded-10 overflow-hidden h-62 w-62 sm:w-37 sm:h-38">
+                <img class="w-full h-full object-cover" src="#" alt="tour">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+  
+        <div class="flex gap-20">
+          <div 
+            class="rounded-full bg-blue w-54 xl:w-38 h-54 xl:h-38 flex items-center justify-center button-animation prev">
+            <svg class="stroke-white w-14 xl:10 h-21 xl:h-14 object-contain">
+              <use href='#arrowIcon2'></use>
+            </svg>
+          </div>
+          <div 
+            class="rounded-full bg-blue w-54 xl:w-38 h-54 xl:h-38 flex items-center justify-center button-animation next">
+            <svg class="stroke-white w-14 xl:10 h-21 xl:h-14 object-contain">
+              <use href='#arrowIcon'></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="page-h3 xl:!text-24 xl:!leading-29">Seawolf Dominator</h3>
+      <div class="page-text1 mt-10">Описание яхты SEAWOLF Dominator длиной 42 м и шириной 8.5 м. Яхта имеет 9 двухместных кают и 3 сьюта и может разместить 24 пассажира. В каждой каюте центральное кондиционирование с </div>
+      <h4 class="page-h4 mt-40 sm:mt-20">Удобства яхты</h4>
+      <ul class="custom-list page-text1 mt-10 space-y-15 sm:space-y-5">
+        <li>8 двухместных кают на нижней палубе с собственными сан.узлами с душеми и центральным кондиционированием с индивидуальным контролем</li>
+        <li>3 каюты «сьют» на верхней палубе с двухспальными кроватями, собственными сан.узлами с душем и центральным кондиционированием с индивидуальным контролем</li>
+        <li>1 двухместная каюта на верхней палубе с собственным сан.узлом с душем и центральным кондиционированием с индивидуальным контролем</li>
+        <li>Во всех каютах и сьютах имеется мини-холодильник</li>
+      </ul>
+
+      <ul class="grid grid-cols-3 xl:grid-cols-1 border-1 border-solid border-blue3 rounded-10 divide-x-1 xl:divide-x-0 xl:divide-y-1 divide-solid divide-blue3 mt-66 sm:mt-30">
+        <li class="p-20 sm:p-10 flex flex-col items-center xl:space-y-10">
+          <div class="page-text2 sm:!text-14 flex items-center gap-10">
+            <svg class="w-25 h-25 sm:w-20 sm:h-20"><use href='#mansIcon'></use></svg>
+            Количество пассажиров
+          </div>
+          <div class="page-h4 sm:!text-20 sm:!leading-24">24</div>
+        </li>
+        <li class="p-20 sm:p-10 flex flex-col items-center xl:space-y-10">
+          <div class="page-text2 sm:!text-14 flex items-center gap-10">
+            <svg class="w-25 h-25 sm:w-20 sm:h-20"><use href='#sofaIcon'></use></svg>
+            Количество кают
+          </div>
+          <div class="page-h4 sm:!text-20 sm:!leading-24">12</div>
+        </li>
+        <li class="p-20 sm:p-10 flex flex-col items-center xl:space-y-10">
+          <div class="page-text2 sm:!text-14 flex items-center gap-10">
+            <svg class="w-25 h-25 sm:w-20 sm:h-20"><use href='#eatIcon'></use></svg>
+            Питание и напитки
+          </div>
+          <div class="page-h4 sm:!text-20 sm:!leading-24">Да</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{{> contacts-block}}
+
+</main>

@@ -1,138 +1,471 @@
-<section class="bg-schedule pt-132 pb-60 container">
+<!-- Header -->
 
-  <div class="space-y-40">
-    <div class="breadcrumbs">
-      <ul>
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">Расписание</a></li>
-      </ul>
+<div>
+
+  {{> header }}
+
+</div>
+
+<!-- Main content -->
+<main>
+
+  <section class="pt-132 sm:pt-95 pb-60 sm:pb-20 container relative">
+
+    <div class="space-y-40 xl:space-y-30">
+      <div class="breadcrumbs">
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">Расписание</a></li>
+        </ul>
+      </div>
+
+      <h1
+        class="page-h1 min-h-[8.4rem] flex items-center justify-center text-white py-6 px-76 sm:px-14 mx-auto w-max xl:w-auto sm:w-full relative text-center brnone sm:brblock">
+        <span class="custom-border custom-border--white left-0"></span>
+        Расписание сафари
+        <span class="custom-border custom-border--white right-0 rotate-180"></span>
+      </h1>
     </div>
 
-    <h1
-      class="page-h1 min-h-[8.4rem] flex items-center justify-center text-white py-6 px-76 sm:px-14 mx-auto w-max xl:w-auto sm:w-full relative text-center brnone sm:brblock">
-      <span class="custom-border custom-border--white left-0"></span>
-      Расписание сафари
-      <span class="custom-border custom-border--white right-0 rotate-180"></span>
-    </h1>
-  </div>
-
-  <div class="p-20 sm:p-10 grid grid-cols-3 xl:grid-cols-1 gap-20 sm:gap-10 bg-blue2 rounded-10 mt-150">
-    <a href="#" class="schedule-button page-h3">Дейли дайвинг</a>
-    <a href="#" class="schedule-button page-h3 active">Дайвинг сафари</a>
-    <a href="#" class="schedule-button page-h3">Кайтинг сафари</a>
-  </div>
-</section>
-
-<section class="mt-100 xl:mt-70 container grid grid-cols-frmax xl:grid-cols-1 gap-60">
-  <div>
-    <h2 class="page-h1">Дайвинг сафари</h2>
-    <div class="page-text1 mt-30 sm:mt-10">
-      Дайвинг-сафари — это морской круиз на комфортабельной яхте с насыщенной программой погружений, наиболее ярко
-      раскрывающей подводный мир данного района моря. Судно, на котором проводится дайвинг-сафари, оснащено всем
-      необходимым оборудованием для дайвинга, в команде корабля всегда есть один или несколько дайв-гидов, хорошо
-      знающих условия погружений и наиболее интересные места для дайвинга. <br><br>
-      Когда вы собираетесь в поездку и выбираете между проживанием в отеле и сафари, решение зависит от вашего
-      подводного опыта и условий для погружений в выбранной вами стране в данный сезон. По сравнению с береговой
-      поездкой дайвинг-программа в сафари намного насыщенней и по разнообразию мест, и по количеству погружений.
-    </div>
-  </div>
-
-
-  <div class="swiper gallery-top rounded-10 w-[90rem] xl:w-full h-[52.2rem] sm:h-[27.8rem] relative">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img class="w-full h-full object-cover" src="./assets/images/safari/safari-1.jpg" alt="tour">
-      </div>
-      <div class="swiper-slide">
-        <img class="w-full h-full object-cover" src="./assets/images/safari/safari-2.jpg" alt="tour">
-      </div>
-      <div class="swiper-slide">
-        <img class="w-full h-full object-cover" src="./assets/images/safari/safari-3.jpg" alt="tour">
-      </div>
-      <div class="swiper-slide">
-        <img class="w-full h-full object-cover" src="./assets/images/safari/safari-4.jpg" alt="tour">
-      </div>
-      <div class="swiper-slide">
-        <img class="w-full h-full object-cover" src="./assets/images/safari/safari-5.jpg" alt="tour">
-      </div>
-    </div>
     <div
-      class="absolute left-[50%] translate-x-[-50%] bottom-30 sm:bottom-7 w-[calc(100%_-_6rem)] sm:w-[calc(100%_-_2rem)] p-20 sm:p-10 bg-blue2 z-10 flex items-center justify-between rounded-10">
-      <div class="swiper gallery-thumbs">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="bg-blue3 rounded-10 overflow-hidden h-62 w-62 sm:w-37 sm:h-38">
-              <img class="w-full h-full object-cover" src="./assets/images/safari/safari-1.jpg" alt="tour">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="bg-blue3 rounded-10 overflow-hidden h-62 w-62 sm:w-37 sm:h-38">
-              <img class="w-full h-full object-cover" src="./assets/images/safari/safari-2.jpg" alt="tour">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="bg-blue3 rounded-10 overflow-hidden h-62 w-62 sm:w-37 sm:h-38">
-              <img class="w-full h-full object-cover" src="./assets/images/safari/safari-3.jpg" alt="tour">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="bg-blue3 rounded-10 overflow-hidden h-62 w-62 sm:w-37 sm:h-38">
-              <img class="w-full h-full object-cover" src="./assets/images/safari/safari-4.jpg" alt="tour">
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="bg-blue3 rounded-10 overflow-hidden h-62 w-62 sm:w-37 sm:h-38">
-              <img class="w-full h-full object-cover" src="./assets/images/safari/safari-5.jpg" alt="tour">
-            </div>
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
+      class="p-20 sm:p-10 grid grid-cols-3 xl:grid-cols-1 gap-20 sm:gap-10 bg-blue2 rounded-10 mt-150 sm:mt-[35.2rem]">
+      <a href="#" class="schedule-button page-h3 sm:!text-16 sm:!leading-19">Дейли дайвинг</a>
+      <a href="#" class="schedule-button page-h3 sm:!text-16 sm:!leading-19 active">Дайвинг сафари</a>
+      <a href="#" class="schedule-button page-h3 sm:!text-16 sm:!leading-19">Кайтинг сафари</a>
+    </div>
 
-      <div class="flex gap-20">
-        <div href="#"
-          class="rounded-full bg-blue w-54 xl:w-38 h-54 xl:h-38 flex items-center justify-center button-animation prev">
-          <svg class="stroke-white w-14 xl:10 h-21 xl:h-14 object-contain">
-            <use href='#arrowIcon2'></use>
-          </svg>
-        </div>
-        <div href="#"
-          class="rounded-full bg-blue w-54 xl:w-38 h-54 xl:h-38 flex items-center justify-center button-animation next">
-          <svg class="stroke-white w-14 xl:10 h-21 xl:h-14 object-contain">
-            <use href='#arrowIcon'></use>
-          </svg>
-        </div>
+    <div class="background absolute top-0 left-0 w-full h-full -z-10">
+      <picture>
+        <source srcset="./assets/images/schedule/schedule-1-mobile.jpg" media="(max-width:500px)">
+        <img class="w-full h-full object-cover" src="./assets/images/schedule/schedule-1.jpg" alt="">
+      </picture>
+    </div>
+  </section>
+
+  <section class="mt-100 xl:mt-70 container grid grid-cols-frmax xl:grid-cols-1 gap-60 sm:gap-30">
+    <div>
+      <h2 class="page-h1 sm:!text-24 sm:!leading-29">Дайвинг сафари</h2>
+      <div class="page-text1 sm:!text-16 sm:!leading-22 mt-30 sm:mt-10">
+        Дайвинг-сафари — это морской круиз на комфортабельной яхте с насыщенной программой погружений, наиболее ярко
+        раскрывающей подводный мир данного района моря. Судно, на котором проводится дайвинг-сафари, оснащено всем
+        необходимым оборудованием для дайвинга, в команде корабля всегда есть один или несколько дайв-гидов, хорошо
+        знающих условия погружений и наиболее интересные места для дайвинга. <br><br>
+        Когда вы собираетесь в поездку и выбираете между проживанием в отеле и сафари, решение зависит от вашего
+        подводного опыта и условий для погружений в выбранной вами стране в данный сезон. По сравнению с береговой
+        поездкой дайвинг-программа в сафари намного насыщенней и по разнообразию мест, и по количеству погружений.
       </div>
     </div>
-  </div>
 
-</section>
 
-<section class="mt-100 xl:mt-70 container">
-  <form action="#" class="flex gap-30">
-    
-    <div class="custom-select w-[33rem]">
-      <select name="country">
-        <option value="none">Выберите направление</option>
-        <option value="Турция">Турция</option>
-        <option value="Египет">Египет</option>
-        <option value="Турция 2">Турция 2</option>
-        <option value="Египет 2">Египет 2</option>
-      </select>
+    <div class="swiper gallery-top rounded-10 w-[90rem] xl:w-full h-[52.2rem] sm:h-[27.8rem] relative"
+      data-thumbsgallery="1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide gallery-top-slide">
+          <img class="w-full h-full object-cover" src="./assets/images/safari/safari-1.jpg" alt="tour">
+        </div>
+        <div class="swiper-slide gallery-top-slide">
+          <img class="w-full h-full object-cover" src="./assets/images/safari/safari-2.jpg" alt="tour">
+        </div>
+        <div class="swiper-slide gallery-top-slide">
+          <img class="w-full h-full object-cover" src="./assets/images/safari/safari-3.jpg" alt="tour">
+        </div>
+        <div class="swiper-slide gallery-top-slide">
+          <img class="w-full h-full object-cover" src="./assets/images/safari/safari-4.jpg" alt="tour">
+        </div>
+        <div class="swiper-slide gallery-top-slide">
+          <img class="w-full h-full object-cover" src="./assets/images/safari/safari-5.jpg" alt="tour">
+        </div>
+      </div>
+      <div
+        class="absolute left-[50%] translate-x-[-50%] bottom-30 sm:bottom-7 w-[calc(100%_-_6rem)] sm:w-[calc(100%_-_2rem)] p-20 sm:p-10 bg-blue2 z-10 flex items-center justify-between rounded-10">
+        <div class="swiper gallery-thumbs" data-thumbs="1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="bg-blue3 rounded-10 overflow-hidden h-62 w-62 sm:w-37 sm:h-38">
+                <img class="w-full h-full object-cover" src="#" alt="tour">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="flex gap-20">
+          <div href="#"
+            class="rounded-full bg-blue w-54 xl:w-38 h-54 xl:h-38 flex items-center justify-center button-animation prev">
+            <svg class="stroke-white w-14 xl:10 h-21 xl:h-14 object-contain">
+              <use href='#arrowIcon2'></use>
+            </svg>
+          </div>
+          <div href="#"
+            class="rounded-full bg-blue w-54 xl:w-38 h-54 xl:h-38 flex items-center justify-center button-animation next">
+            <svg class="stroke-white w-14 xl:10 h-21 xl:h-14 object-contain">
+              <use href='#arrowIcon'></use>
+            </svg>
+          </div>
+        </div>
+      </div>
     </div>
 
-    
-    <div class="date-container">
-      <input type="text" name="dateStart" class="start date-input custom-input w-[32.2rem] sm:w-full !pr-40" placeholder="Выберите дату">
+  </section>
+
+  <section class="mt-100 xl:mt-70 container">
+    <div class="filter">
+      <button class="filter-button page-button !w-full page-text1">
+        Фильтр
+      </button>
+      <div class="filter-panel">
+
+        <form action="#" class="filter-form flex gap-30 xl:gap-10 xl:flex-col relative">
+
+          <button class="close-button absolute top-20 xl:top-15 right-20 xl:right-15 hidden xl:block" type="reset">
+            <svg class="w-17 h-17 object-contain">
+              <use href='#crossIcon'></use>
+            </svg>
+          </button>
+
+          <h2 class="page-h2 hidden xl:block text-center xl:pb-10">Фильтр</h2>
+          <div class="custom-select w-[33rem] xl:w-full">
+            <select name="country">
+              <option value="none">Выберите направление</option>
+              <option value="Турция">Турция</option>
+              <option value="Египет">Египет</option>
+              <option value="Турция 2">Турция 2</option>
+              <option value="Египет 2">Египет 2</option>
+            </select>
+          </div>
+
+
+          <div class="date-container">
+            <input type="text" autocomplete="off" name="dateStart"
+              class="start date-input custom-input !py-22 sm:!py-[1.75rem] w-[32.2rem] sm:w-full !pr-40"
+              placeholder="Выберите дату">
+          </div>
+
+          <div class="custom-select w-[20.6rem] xl:w-full">
+            <select name="numberOfNights">
+              <option value="none">Количество ночей</option>
+              <option value="1">1</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+
+
+          <button type="submit" class="page-button px-100 page-text1 xl:!w-full xl:mt-10">Найти</button>
+
+        </form>
+      </div>
     </div>
+  </section>
 
-    
-    <div class="date-container">
-      <input type="text" name="dateEnd" class="end date-input custom-input w-[32.2rem] sm:w-full !pr-40" placeholder="Выберите дату">
-    </div>
+  <section class="container mt-40 sm:mt-20">
+    <ul class="grid grid-cols-3 xl:grid-cols-2 sm:grid-cols-1 gap-30 sm:gap-20">
+      <li class="rounded-10 overflow-hidden border-1 border-solid border-blue3">
+        <form data-id="My-order-modal">
+          <div class="w-full h-[30rem] sm:h-170 custom-linear bg-blue3 rounded-t-10">
+            <img class="lazyload transition-opacity duration-300 w-full h-full object-cover"
+              data-src="./assets/images/routes/routes-1.jpg" alt="">
+            <div class="absolute bottom-30 sm:bottom-10 left-30 sm:left-10 z-10 space-y-10 sm:space-y-5">
+              <h2 class="page-h3 sm:!text-24 sm:!leading-29 text-white">Северные Рэки</h2>
+              <input type="hidden" name="MYtitle" value="Северные Рэки">
+              <input type="hidden" name="MYdata" value="12 января 2023 - 20 января 2023">
+              <input type="hidden" name="MYpricePerPerson" value="1120 $">
+              <div class="page-text1 text-white">12 января 2023 - 20 января 2023</div>
+            </div>
+          </div>
 
-      
-    <button type="submit" class="page-button px-100 page-text1">Найти</button>
+          <ul class="route-list">
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue moonIcon">
+                Количество дней
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">7</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue mansIcon">
+                Свободных мест
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">12</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue priceIcon">
+                Цена
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24 custom-after" data-after="/ персона">1120 $
+              </div>
+            </li>
+          </ul>
 
-  </form>
-</section>
+          <div class="p-30 sm:p-10 sm:pt-26 border-t-1 border-solid border-blue3 space-y-50 xl:space-y-30">
+            <div class="page-text2 flex gap-30 sm:gap-20">
+              <div class="flex gap-10 sm:py-2 routeIcon">Маршрут</div>
+              <div class="text-gray">Тистлегорм — Шааб Эль Ерг — Мыс Блаф — Сиюль-Кебира — Сиюль-Сорайя — Шааб Умм Уск —
+                Умм Гамар</div>
+            </div>
+
+            <div class="grid grid-cols-2 xl:grid-cols-1 gap-30 sm:gap-15">
+              <button type="submit" class="page-button page-text1 !w-full">Забронировать</button>
+              <a href="#" class="page-button-white page-text1">Подробнее о маршруте</a>
+            </div>
+          </div>
+        </form>
+      </li>
+      <li class="rounded-10 overflow-hidden border-1 border-solid border-blue3">
+        <form data-id="My-order-modal">
+          <div class="w-full h-[30rem] sm:h-170 custom-linear bg-blue3 rounded-t-10">
+            <img class="lazyload transition-opacity duration-300 w-full h-full object-cover"
+              data-src="./assets/images/routes/routes-2.jpg" alt="">
+            <div class="absolute bottom-30 sm:bottom-10 left-30 sm:left-10 z-10 space-y-10 sm:space-y-5">
+              <h2 class="page-h3 sm:!text-24 sm:!leading-29 text-white">Северные Рэки2</h2>
+              <input type="hidden" name="MYtitle" value="Северные Рэки2">
+              <input type="hidden" name="MYdata" value="12 января 2022 - 20 января 2024">
+              <input type="hidden" name="MYpricePerPerson" value="1000 $">
+              <div class="page-text1 text-white">12 января 2023 - 20 января 2023</div>
+            </div>
+          </div>
+
+          <ul class="route-list">
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue moonIcon">
+                Количество дней
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">7</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue mansIcon">
+                Свободных мест
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">12</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue priceIcon">
+                Цена
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24 custom-after" data-after="/ персона">1120 $
+              </div>
+            </li>
+          </ul>
+
+          <div class="p-30 sm:p-10 sm:pt-26 border-t-1 border-solid border-blue3 space-y-50 xl:space-y-30">
+            <div class="page-text2 flex gap-30 sm:gap-20">
+              <div class="flex gap-10 sm:py-2 routeIcon">Маршрут</div>
+              <div class="text-gray">Тистлегорм — Шааб Эль Ерг — Мыс Блаф — Сиюль-Кебира — Сиюль-Сорайя — Шааб Умм Уск —
+                Умм Гамар</div>
+            </div>
+
+            <div class="grid grid-cols-2 xl:grid-cols-1 gap-30 sm:gap-15">
+              <button type="submit" class="page-button page-text1 !w-full">Забронировать</button>
+              <a href="#" class="page-button-white page-text1">Подробнее о маршруте</a>
+            </div>
+          </div>
+        </form>
+      </li>
+      <li class="rounded-10 overflow-hidden border-1 border-solid border-blue3">
+        <form data-id="My-order-modal">
+          <div class="w-full h-[30rem] sm:h-170 custom-linear bg-blue3 rounded-t-10">
+            <img class="lazyload transition-opacity duration-300 w-full h-full object-cover"
+              data-src="./assets/images/routes/routes-3.jpg" alt="">
+            <div class="absolute bottom-30 sm:bottom-10 left-30 sm:left-10 z-10 space-y-10 sm:space-y-5">
+              <h2 class="page-h3 sm:!text-24 sm:!leading-29 text-white">Северные Рэки</h2>
+              <input type="hidden" name="MYtitle" value="Северные Рэки">
+              <input type="hidden" name="MYdata" value="12 января 2023 - 20 января 2023">
+              <input type="hidden" name="MYpricePerPerson" value="1120 $">
+              <div class="page-text1 text-white">12 января 2023 - 20 января 2023</div>
+            </div>
+          </div>
+
+          <ul class="route-list">
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue moonIcon">
+                Количество дней
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">7</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue mansIcon">
+                Свободных мест
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">12</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue priceIcon">
+                Цена
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24 custom-after" data-after="/ персона">1120 $
+              </div>
+            </li>
+          </ul>
+
+          <div class="p-30 sm:p-10 sm:pt-26 border-t-1 border-solid border-blue3 space-y-50 xl:space-y-30">
+            <div class="page-text2 flex gap-30 sm:gap-20">
+              <div class="flex gap-10 sm:py-2 routeIcon">Маршрут</div>
+              <div class="text-gray">Тистлегорм — Шааб Эль Ерг — Мыс Блаф — Сиюль-Кебира — Сиюль-Сорайя — Шааб Умм Уск —
+                Умм Гамар</div>
+            </div>
+
+            <div class="grid grid-cols-2 xl:grid-cols-1 gap-30 sm:gap-15">
+              <button type="submit" class="page-button page-text1 !w-full">Забронировать</button>
+              <a href="#" class="page-button-white page-text1">Подробнее о маршруте</a>
+            </div>
+          </div>
+        </form>
+      </li>
+      <li class="rounded-10 overflow-hidden border-1 border-solid border-blue3">
+        <form data-id="My-order-modal">
+          <div class="w-full h-[30rem] sm:h-170 custom-linear bg-blue3 rounded-t-10">
+            <img class="lazyload transition-opacity duration-300 w-full h-full object-cover"
+              data-src="./assets/images/routes/routes-4.jpg" alt="">
+            <div class="absolute bottom-30 sm:bottom-10 left-30 sm:left-10 z-10 space-y-10 sm:space-y-5">
+              <h2 class="page-h3 sm:!text-24 sm:!leading-29 text-white">Северные Рэки</h2>
+              <input type="hidden" name="MYtitle" value="Северные Рэки">
+              <input type="hidden" name="MYdata" value="12 января 2023 - 20 января 2023">
+              <input type="hidden" name="MYpricePerPerson" value="1120 $">
+              <div class="page-text1 text-white">12 января 2023 - 20 января 2023</div>
+            </div>
+          </div>
+
+          <ul class="route-list">
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue moonIcon">
+                Количество дней
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">7</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue mansIcon">
+                Свободных мест
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">12</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue priceIcon">
+                Цена
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24 custom-after" data-after="/ персона">1120 $
+              </div>
+            </li>
+          </ul>
+
+          <div class="p-30 sm:p-10 sm:pt-26 border-t-1 border-solid border-blue3 space-y-50 xl:space-y-30">
+            <div class="page-text2 flex gap-30 sm:gap-20">
+              <div class="flex gap-10 sm:py-2 routeIcon">Маршрут</div>
+              <div class="text-gray">Тистлегорм — Шааб Эль Ерг — Мыс Блаф — Сиюль-Кебира — Сиюль-Сорайя — Шааб Умм Уск —
+                Умм Гамар</div>
+            </div>
+
+            <div class="grid grid-cols-2 xl:grid-cols-1 gap-30 sm:gap-15">
+              <button type="submit" class="page-button page-text1 !w-full">Забронировать</button>
+              <a href="#" class="page-button-white page-text1">Подробнее о маршруте</a>
+            </div>
+          </div>
+        </form>
+      </li>
+      <li class="rounded-10 overflow-hidden border-1 border-solid border-blue3">
+        <form data-id="My-order-modal">
+          <div class="w-full h-[30rem] sm:h-170 custom-linear bg-blue3 rounded-t-10">
+            <img class="lazyload transition-opacity duration-300 w-full h-full object-cover"
+              data-src="./assets/images/routes/routes-5.jpg" alt="">
+            <div class="absolute bottom-30 sm:bottom-10 left-30 sm:left-10 z-10 space-y-10 sm:space-y-5">
+              <h2 class="page-h3 sm:!text-24 sm:!leading-29 text-white">Северные Рэки</h2>
+              <input type="hidden" name="MYtitle" value="Северные Рэки">
+              <input type="hidden" name="MYdata" value="12 января 2023 - 20 января 2023">
+              <input type="hidden" name="MYpricePerPerson" value="1120 $">
+              <div class="page-text1 text-white">12 января 2023 - 20 января 2023</div>
+            </div>
+          </div>
+
+          <ul class="route-list">
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue moonIcon">
+                Количество дней
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">7</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue mansIcon">
+                Свободных мест
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">12</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue priceIcon">
+                Цена
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24 custom-after" data-after="/ персона">1120 $
+              </div>
+            </li>
+          </ul>
+
+          <div class="p-30 sm:p-10 sm:pt-26 border-t-1 border-solid border-blue3 space-y-50 xl:space-y-30">
+            <div class="page-text2 flex gap-30 sm:gap-20">
+              <div class="flex gap-10 sm:py-2 routeIcon">Маршрут</div>
+              <div class="text-gray">Тистлегорм — Шааб Эль Ерг — Мыс Блаф — Сиюль-Кебира — Сиюль-Сорайя — Шааб Умм Уск —
+                Умм Гамар</div>
+            </div>
+
+            <div class="grid grid-cols-2 xl:grid-cols-1 gap-30 sm:gap-15">
+              <button type="submit" class="page-button page-text1 !w-full">Забронировать</button>
+              <a href="#" class="page-button-white page-text1">Подробнее о маршруте</a>
+            </div>
+          </div>
+        </form>
+      </li>
+      <li class="rounded-10 overflow-hidden border-1 border-solid border-blue3">
+        <form data-id="My-order-modal">
+          <div class="w-full h-[30rem] sm:h-170 custom-linear bg-blue3 rounded-t-10">
+            <img class="lazyload transition-opacity duration-300 w-full h-full object-cover"
+              data-src="./assets/images/routes/routes-6.jpg" alt="">
+            <div class="absolute bottom-30 sm:bottom-10 left-30 sm:left-10 z-10 space-y-10 sm:space-y-5">
+              <h2 class="page-h3 sm:!text-24 sm:!leading-29 text-white">Северные Рэки</h2>
+              <input type="hidden" name="MYtitle" value="Северные Рэки">
+              <input type="hidden" name="MYdata" value="12 января 2023 - 20 января 2023">
+              <input type="hidden" name="MYpricePerPerson" value="1120 $">
+              <div class="page-text1 text-white">12 января 2023 - 20 января 2023</div>
+            </div>
+          </div>
+
+          <ul class="route-list">
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue moonIcon">
+                Количество дней
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">7</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue mansIcon">
+                Свободных мест
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24">12</div>
+            </li>
+            <li class="route-list__item">
+              <div class="page-text2 sm:!text-14 flex gap-10 items-center text-blue priceIcon">
+                Цена
+              </div>
+              <div class="page-h4 sm:!text-20 sm:!leading-24 custom-after" data-after="/ персона">1120 $
+              </div>
+            </li>
+          </ul>
+
+          <div class="p-30 sm:p-10 sm:pt-26 border-t-1 border-solid border-blue3 space-y-50 xl:space-y-30">
+            <div class="page-text2 flex gap-30 sm:gap-20">
+              <div class="flex gap-10 sm:py-2 routeIcon">Маршрут</div>
+              <div class="text-gray">Тистлегорм — Шааб Эль Ерг — Мыс Блаф — Сиюль-Кебира — Сиюль-Сорайя — Шааб Умм Уск —
+                Умм Гамар</div>
+            </div>
+
+            <div class="grid grid-cols-2 xl:grid-cols-1 gap-30 sm:gap-15">
+              <button type="submit" class="page-button page-text1 !w-full">Забронировать</button>
+              <a href="#" class="page-button-white page-text1">Подробнее о маршруте</a>
+            </div>
+          </div>
+        </form>
+      </li>
+    </ul>
+
+    {{> pagination}}
+  </section>
+
+</main>
+
+<div class="mt-200 xl:mt-70"></div>

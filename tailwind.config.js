@@ -16,6 +16,8 @@ module.exports = {
       frmin: "1fr,min-content",
       maxfr: "max-content,1fr",
       frmax: "1fr,max-content",
+      max3: "repeat(3, max-content)",
+      custom: "repeat(auto-fit,minmax(100px,1fr))"
     },
     boxShadow: {
       'custom': '0px 0.4rem 1.6rem rgba(16, 164, 189, 0.6)',
@@ -44,6 +46,7 @@ module.exports = {
       "blue2": "var(--blue2)",
       "blue3": "var(--blue3)",
       "bordr": "var(--bordr)",
+      "transparent": "transparent"
     }
   },
   plugins: [
@@ -69,6 +72,13 @@ module.exports = {
         '.brblock br': {
           display: 'inline',
         },
+      })
+    }),
+    plugin(function({ addVariant, e }) {
+      addVariant('third-child', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`third-child${separator}${className}`)}:nth-child(3)`
+        })
       })
     })
   ],

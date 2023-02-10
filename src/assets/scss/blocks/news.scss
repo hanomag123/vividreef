@@ -1,0 +1,104 @@
+.news {
+
+}
+.news__list {
+
+}
+
+.news__item {
+  position: relative;
+  &:nth-child(12n+12):not(:last-child),&:first-child {
+    grid-column: 2 span;
+    grid-row: 2 span;
+    @include breakpoint($sm-bp) {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    .news__img {
+      height: 100%;
+      @include breakpoint($sm-bp) {
+        height: 20.7rem;
+      }
+    }
+    .news__wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 1;
+      width: 46.4rem;
+      @include breakpoint($sm-bp) {
+        position: static;
+        width: auto;
+        transform: unset;
+      }
+    }
+    .news__title {
+      @apply page-h2;
+      margin-top: 0;
+      color: var(--white);
+      text-align: center;
+      @include breakpoint($sm-bp) {
+        color: var(--black);
+        text-align: start;
+        margin-top: 1rem;
+        font-size: 2.4rem;
+        line-height: 2.9rem;
+      }
+    }
+    .news__desc {
+      color: var(--white);
+      margin-top: 4rem;
+      text-align: center;
+      @include breakpoint($sm-bp) {
+        text-align: start;
+        color: var(--black);
+        margin-top: 1rem;
+      }
+    }
+  }
+  a {
+    transition: opacity .3s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.news__img {
+  height: 23.9rem;
+  width: 100%;
+  border-radius: 1rem;
+  overflow: hidden;
+  @include breakpoint($sm-bp) {
+    height: 20.7rem;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+  }
+}
+
+.news__title {
+  @apply page-h3;
+  margin-top: 2rem;
+  display: block;
+  @include breakpoint($sm-bp) {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    margin-top: 1rem;
+  }
+}
+
+.news__desc {
+  margin-top: 0.5rem;
+  @apply page-text1;
+  @include breakpoint($sm-bp) {
+    margin-top: 1rem;
+  }
+}
+
+.rewiew-item {
+  @apply first:col-span-2 last:col-span-2 sm:first:col-span-1 sm:last:col-span-1 bg-blue2 rounded-10 p-30 sm:p-10 min-h-[39.5rem] xl:min-h-0 grid;
+}

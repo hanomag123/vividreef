@@ -11,8 +11,8 @@
   grid-template-columns: 1fr max-content max-content;
   justify-content: flex-start;
   gap: 0;
-  height: 3rem;
   background-color: var(--white);
+  padding-left: 2rem;
 }
 .qs-left {
   grid-column: 2 / 3;
@@ -20,6 +20,8 @@
   &::before {
     content: '';
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.74512 0.5L0.521621 6L6.74512 11.5' stroke='%230A0A0A' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 0.8rem;
     height: 1.2rem;
     display: block;
@@ -45,6 +47,8 @@
   &::before {
     content: '';
     background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.564453 11.5L6.78795 6L0.564453 0.5' stroke='%230A0A0A' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 0.8rem;
     height: 1.2rem;
     display: block;
@@ -61,9 +65,12 @@
   font-weight: 500;
   font-size: 1.4rem;
   line-height: 140%;
+  display: flex;
+  gap: 1rem;
+  border: 0;
 }
 .qs-month-year:not(.qs-disabled-year-overlay):hover {
-  border-bottom: 0;
+  border: 0;
 }
 
 .qs-datepicker-container {
@@ -126,5 +133,27 @@
   }
   .qs-outside-current-month[data-direction="1"] {
     display: none;
+  }
+
+  .qs-overlay .qs-overlay-month {
+    color: var(--white);
+  }
+
+  .qs-year, .qs-month {
+    border: 0.1rem solid var(--gray);
+    padding: 0.5rem 1.9rem;
+    padding-right: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 1rem;
+    &::after {
+      content: '';
+      width: 0.9rem;
+      height: 0.6rem;
+      display: inline-block;
+      background-image: url("data:image/svg+xml,%3Csvg width='9' height='6' viewBox='0 0 9 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L4.63037 5L8.26075 1' stroke='%23616465' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+    }
   }
 }
