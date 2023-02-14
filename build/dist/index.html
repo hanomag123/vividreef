@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="">
+    <title></title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css"> -->
+    <link rel="stylesheet" href="assets/css/vendor/swiper426.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <!-- CSS only -->
+    
+    <style>
+    
+    
+    </style>
+    
+    
+</head>
+
+<body>
+    <svg style="display: none;">
+    
+        <symbol id="arrowIcon" viewBox="0 0 14 21">
+            <g>
+                <path d="M1 10.5H13M13 10.5L4.22581 1.5M13 10.5L4.22581 19.5" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </g>
+        </symbol>
+    
+        <symbol id="arrowIcon2" viewBox="0 0 14 21">
+            <g>
+                <path d="M13 10L1 10M1 10L9.77419 19M1 10L9.7742 0.999999" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </g>
+        </symbol>
+    
+    
+        <symbol id="moonIcon" viewBox="0 0 17 25">
+            <g>
+                <path
+                    d="M2 12.0006C1.9999 13.5708 2.36955 15.1189 3.07901 16.5196C3.78847 17.9204 4.8178 19.1343 6.08367 20.0633C7.34955 20.9922 8.81638 21.6101 10.3654 21.8667C11.9145 22.1234 13.5022 22.0117 15 21.5406C12.9696 20.9025 11.1957 19.6333 9.93641 17.9175C8.67711 16.2017 7.99807 14.1289 7.99807 12.0006C7.99807 9.87229 8.67711 7.79949 9.93641 6.08371C11.1957 4.36794 12.9696 3.09869 15 2.46061C13.5022 1.98956 11.9145 1.87784 10.3654 2.1345C8.81638 2.39115 7.34955 3.00897 6.08367 3.93792C4.8178 4.86688 3.78847 6.08087 3.07901 7.4816C2.36955 8.88234 1.9999 10.4305 2 12.0006Z"
+                    fill="#14B6D2" />
+    
+            </g>
+        </symbol>
+    
+        <symbol id="mansIcon" viewBox="0 0 25 25">
+            <g>
+                <path
+                    d="M10.9375 21.875C10.9375 21.875 9.375 21.875 9.375 20.3125C9.375 18.75 10.9375 14.0625 17.1875 14.0625C23.4375 14.0625 25 18.75 25 20.3125C25 21.875 23.4375 21.875 23.4375 21.875H10.9375ZM17.1875 12.5C18.4307 12.5 19.623 12.0061 20.5021 11.1271C21.3811 10.248 21.875 9.0557 21.875 7.8125C21.875 6.5693 21.3811 5.37701 20.5021 4.49794C19.623 3.61886 18.4307 3.125 17.1875 3.125C15.9443 3.125 14.752 3.61886 13.8729 4.49794C12.9939 5.37701 12.5 6.5693 12.5 7.8125C12.5 9.0557 12.9939 10.248 13.8729 11.1271C14.752 12.0061 15.9443 12.5 17.1875 12.5ZM8.15 21.875C7.91837 21.3872 7.80285 20.8524 7.8125 20.3125C7.8125 18.1953 8.875 16.0156 10.8375 14.5C9.85795 14.1982 8.83742 14.0506 7.8125 14.0625C1.5625 14.0625 0 18.75 0 20.3125C0 21.875 1.5625 21.875 1.5625 21.875H8.15ZM7.03125 12.5C8.06725 12.5 9.06082 12.0884 9.79339 11.3559C10.5259 10.6233 10.9375 9.62975 10.9375 8.59375C10.9375 7.55775 10.5259 6.56418 9.79339 5.83161C9.06082 5.09905 8.06725 4.6875 7.03125 4.6875C5.99525 4.6875 5.00168 5.09905 4.26911 5.83161C3.53655 6.56418 3.125 7.55775 3.125 8.59375C3.125 9.62975 3.53655 10.6233 4.26911 11.3559C5.00168 12.0884 5.99525 12.5 7.03125 12.5Z"
+                    fill="#14B6D2" />
+            </g>
+        </symbol>
+    
+        <symbol id="priceIcon" viewBox="0 0 23 23">
+            <g>
+                <path
+                    d="M10.4858 1L20.3848 2.415L21.7988 12.315L12.6068 21.507C12.4193 21.6945 12.165 21.7998 11.8998 21.7998C11.6346 21.7998 11.3803 21.6945 11.1928 21.507L1.29279 11.607C1.10532 11.4195 1 11.1652 1 10.9C1 10.6348 1.10532 10.3805 1.29279 10.193L10.4858 1ZM13.3138 9.486C13.4995 9.67169 13.7201 9.81897 13.9627 9.91944C14.2054 10.0199 14.4655 10.0716 14.7281 10.0716C14.9908 10.0715 15.2509 10.0197 15.4935 9.91917C15.7361 9.81862 15.9566 9.67126 16.1423 9.4855C16.328 9.29975 16.4753 9.07923 16.5757 8.83656C16.6762 8.59388 16.7279 8.3338 16.7278 8.07115C16.7278 7.8085 16.676 7.54843 16.5755 7.30579C16.4749 7.06315 16.3275 6.84269 16.1418 6.657C15.956 6.47131 15.7355 6.32403 15.4928 6.22356C15.2502 6.12309 14.9901 6.0714 14.7274 6.07145C14.197 6.07154 13.6883 6.28235 13.3133 6.6575C12.9383 7.03265 12.7276 7.54141 12.7277 8.07185C12.7278 8.6023 12.9386 9.11098 13.3138 9.486Z"
+                    fill="#14B6D2" />
+            </g>
+        </symbol>
+    
+        
+        <symbol id="pointIcon" viewBox="0 0 24 24">
+            <g>
+                <path d="M12 12C12.55 12 13.021 11.804 13.413 11.412C13.8043 11.0207 14 10.55 14 10C14 9.45 13.8043 8.979 13.413 8.587C13.021 8.19567 12.55 8 12 8C11.45 8 10.9793 8.19567 10.588 8.587C10.196 8.979 10 9.45 10 10C10 10.55 10.196 11.0207 10.588 11.412C10.9793 11.804 11.45 12 12 12ZM12 21.625C11.8667 21.625 11.7333 21.6 11.6 21.55C11.4667 21.5 11.35 21.4333 11.25 21.35C8.81667 19.2 7 17.2043 5.8 15.363C4.6 13.521 4 11.8 4 10.2C4 7.7 4.80433 5.70833 6.413 4.225C8.021 2.74167 9.88333 2 12 2C14.1167 2 15.979 2.74167 17.587 4.225C19.1957 5.70833 20 7.7 20 10.2C20 11.8 19.4 13.521 18.2 15.363C17 17.2043 15.1833 19.2 12.75 21.35C12.65 21.4333 12.5333 21.5 12.4 21.55C12.2667 21.6 12.1333 21.625 12 21.625Z"/>
+            </g>
+        </symbol>
+    
+        <symbol id="phoneIcon" viewBox="0 0 24 24">
+            <g>
+                <path d="M6.02222 10.6556C7.62222 13.8 10.2 16.3778 13.3444 17.9778L15.7889 15.5333C16.1 15.2222 16.5333 15.1333 16.9222 15.2556C18.1667 15.6667 19.5 15.8889 20.8889 15.8889C21.1836 15.8889 21.4662 16.006 21.6746 16.2143C21.8829 16.4227 22 16.7053 22 17V20.8889C22 21.1836 21.8829 21.4662 21.6746 21.6746C21.4662 21.8829 21.1836 22 20.8889 22C15.8792 22 11.0748 20.0099 7.53243 16.4676C3.99007 12.9252 2 8.12076 2 3.11111C2 2.81643 2.11706 2.53381 2.32544 2.32544C2.53381 2.11706 2.81643 2 3.11111 2H7C7.29469 2 7.5773 2.11706 7.78567 2.32544C7.99405 2.53381 8.11111 2.81643 8.11111 3.11111C8.11111 4.5 8.33333 5.83333 8.74444 7.07778C8.86667 7.46667 8.77778 7.9 8.46667 8.21111L6.02222 10.6556Z"/>
+            </g>
+        </symbol>
+    
+        <symbol id="mailIcon" viewBox="0 0 24 24">
+            <g>
+                <path d="M4 20C3.45 20 2.97933 19.8043 2.588 19.413C2.196 19.021 2 18.55 2 18V6C2 5.45 2.196 4.97933 2.588 4.588C2.97933 4.196 3.45 4 4 4H20C20.55 4 21.021 4.196 21.413 4.588C21.8043 4.97933 22 5.45 22 6V18C22 18.55 21.8043 19.021 21.413 19.413C21.021 19.8043 20.55 20 20 20H4ZM12 12.825C12.0833 12.825 12.1707 12.8123 12.262 12.787C12.354 12.7623 12.4417 12.725 12.525 12.675L19.6 8.25C19.7333 8.16667 19.8333 8.06267 19.9 7.938C19.9667 7.81267 20 7.675 20 7.525C20 7.19167 19.8583 6.94167 19.575 6.775C19.2917 6.60833 19 6.61667 18.7 6.8L12 11L5.3 6.8C5 6.61667 4.70833 6.61233 4.425 6.787C4.14167 6.96233 4 7.20833 4 7.525C4 7.69167 4.03333 7.83733 4.1 7.962C4.16667 8.08733 4.26667 8.18333 4.4 8.25L11.475 12.675C11.5583 12.725 11.646 12.7623 11.738 12.787C11.8293 12.8123 11.9167 12.825 12 12.825Z"/>
+            </g>
+        </symbol>
+    
+        <symbol id="crossIcon" viewBox="0 0 17 17">
+            <g>
+                <path d="M1 1L16 16M16 1L1 16" stroke="#616465" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+        </symbol>
+            
+    
+        <symbol id="paginationIcon" viewBox="0 0 12 12">
+            <g>
+                <path d="M0.5 11.5L6.5 6L0.500001 0.499999" stroke="#FAFAFA" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6.5 11.5L11.5 6L6.5 0.499999" stroke="#FAFAFA" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+        </symbol>
+    
+        
+        <symbol id="sofaIcon" viewBox="0 0 25 25">
+            <g>
+                <path d="M2 20V13.1429C2 12.6286 2.10083 12.1619 2.3025 11.7429C2.50417 11.3238 2.77 10.9524 3.1 10.6286V7.42857C3.1 6.47619 3.42083 5.66667 4.0625 5C4.70417 4.33333 5.48333 4 6.4 4H10.8C11.2217 4 11.6158 4.08114 11.9825 4.24343C12.3492 4.40495 12.6883 4.62857 13 4.91429C13.3117 4.62857 13.6508 4.40495 14.0175 4.24343C14.3842 4.08114 14.7783 4 15.2 4H19.6C20.5167 4 21.2958 4.33333 21.9375 5C22.5792 5.66667 22.9 6.47619 22.9 7.42857V10.6286C23.23 10.9524 23.4958 11.3238 23.6975 11.7429C23.8992 12.1619 24 12.6286 24 13.1429V20H21.8V17.7143H4.2V20H2ZM14.1 9.71429H20.7V7.42857C20.7 7.10476 20.5944 6.83314 20.3832 6.61371C20.1727 6.39505 19.9117 6.28571 19.6 6.28571H15.2C14.8883 6.28571 14.6273 6.39505 14.4168 6.61371C14.2056 6.83314 14.1 7.10476 14.1 7.42857V9.71429ZM5.3 9.71429H11.9V7.42857C11.9 7.10476 11.7948 6.83314 11.5843 6.61371C11.3731 6.39505 11.1117 6.28571 10.8 6.28571H6.4C6.08833 6.28571 5.8269 6.39505 5.6157 6.61371C5.40523 6.83314 5.3 7.10476 5.3 7.42857V9.71429Z" fill="#14B6D2"/>
+            </g>
+        </symbol>
+    
+        <symbol id="eatIcon" viewBox="0 0 25 25">
+            <g>
+                <path d="M3.62467 3.12504C3.34841 3.12504 3.08346 3.23479 2.8881 3.43014C2.69275 3.62549 2.58301 3.89044 2.58301 4.16671V9.89588C2.58301 11.6563 3.65592 13.1563 5.18717 13.7709V20.3125C5.18717 20.7269 5.35179 21.1244 5.64482 21.4174C5.93785 21.7104 6.33527 21.875 6.74967 21.875C7.16408 21.875 7.5615 21.7104 7.85453 21.4174C8.14755 21.1244 8.31217 20.7269 8.31217 20.3125V13.7709C9.84343 13.1563 10.9163 11.6563 10.9163 9.89588V4.16671C10.9163 3.89044 10.8066 3.62549 10.6112 3.43014C10.4159 3.23479 10.1509 3.12504 9.87467 3.12504C9.59841 3.12504 9.33346 3.23479 9.13811 3.43014C8.94276 3.62549 8.83301 3.89044 8.83301 4.16671V8.33338C8.83301 8.47151 8.77813 8.60399 8.68046 8.70166C8.58278 8.79934 8.45031 8.85421 8.31217 8.85421C8.17404 8.85421 8.04157 8.79934 7.94389 8.70166C7.84621 8.60399 7.79134 8.47151 7.79134 8.33338V4.16671C7.79134 3.89044 7.68159 3.62549 7.48624 3.43014C7.29089 3.23479 7.02594 3.12504 6.74967 3.12504C6.47341 3.12504 6.20846 3.23479 6.01311 3.43014C5.81775 3.62549 5.70801 3.89044 5.70801 4.16671V8.33338C5.70801 8.47151 5.65313 8.60399 5.55546 8.70166C5.45778 8.79934 5.32531 8.85421 5.18717 8.85421C5.04904 8.85421 4.91657 8.79934 4.81889 8.70166C4.72121 8.60399 4.66634 8.47151 4.66634 8.33338V4.16671C4.66634 3.89044 4.55659 3.62549 4.36124 3.43014C4.16589 3.23479 3.90094 3.12504 3.62467 3.12504ZM21.208 3.12504C21.0726 3.12504 20.9372 3.21879 20.8122 3.29171L17.1663 5.46879V9.37504H12.9997V11.4584H14.0413L15.083 21.875H21.333L22.3747 11.4584H23.4163V9.37504H19.2497V6.60421L21.8538 5.04171C22.3747 4.75004 22.5101 4.16671 22.208 3.64588C21.9893 3.27088 21.6038 3.07296 21.208 3.12504Z" fill="#14B6D2"/>
+            </g>
+        </symbol>
+            
+    </svg>
+        
+        
+    <div class="page">
+
+        <!-- Preloader-->
+
+        <div class="preloader" id="preloader">
+            <div class="spin">
+                <div class="lds-ring"><div></div><div></div><div></div><div class="logo"></div></div>
+            </div>
+        </div>
+
+
+            <!DOCTYPE html>
+            <html lang="ru">
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>links</title>
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+            
+                    ._progress {
+                        height: 100vh;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-start;
+                        padding-top: 10rem;
+                        padding-bottom: 2vh;
+                    }
+            
+                    ._progress__inner {
+                        columns: 2;
+                    }
+                    ul,ol {
+                        /* margin-top: 100px; */
+                    }
+                    li {
+                        font-size: 1.5vmax;
+                    }
+                    ol {
+                        list-style-type: decimal;
+                        list-style-position: inside;
+                    }
+                    ._progress__link {
+                        display: inline-block;
+                        font-size: 1.5vmax;
+                        margin-bottom: 10px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        color: #222222;
+                        transition: opacity 0.3s;
+                    }
+                    @media(max-width: 1024px) {
+                        ._progress__inner {
+                            columns: 1;
+                        }
+                    }
+                    @media (any-hover: hover) {
+                        ._progress__link:hover {
+                            opacity: 0.5;
+                        }
+                    }
+                </style>
+            </head>
+            
+            <body>
+                <div class="_progress">
+                    <div class="_progress__inner">
+                        <ol>
+                            <li><a href="main.html" class="_progress__link">Главная</a></li>
+                            <li><a href="schedule.html" class="_progress__link">Расписание</a></li>
+                            <li><a href="route.html" class="_progress__link">Маршрут</a></li>
+                            <li><a href="about.html" class="_progress__link">О компании</a></li>
+                            <li><a href="news.html" class="_progress__link">Новости</a></li>
+                            <li><a href="new.html" class="_progress__link">Новость</a></li>
+                            <li><a href="reviews.html" class="_progress__link">Отзывы</a></li>
+                            <li><a href="contacts.html" class="_progress__link">Контакты</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </body>
+            </html>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="logo xl:col-span-2">
+            <img src="./assets/images/header/logo.png" alt="">
+          </div>
+        
+          <nav>
+            <ul class="page-text1 sm:!text-12 sm:!leading-15 flex gap-40 xl:gap-10 xl:flex-col">
+              <li><a class="text-white hoverunderline after:bg-white" href="#">О компании</a></li>
+              <li><a class="text-white hoverunderline after:bg-white" href="#">Расписание сафари</a></li>
+              <li><a class="text-white hoverunderline after:bg-white" href="#">Новости</a></li>
+              <li><a class="text-white hoverunderline after:bg-white" href="#">Отзывы</a></li>
+              <li><a class="text-white hoverunderline after:bg-white" href="#">Контакты</a></li>
+            </ul>
+          </nav>
+        
+          <div class="footer__block page-text1 sm:!text-12 sm:!leading-15">
+            <div class="text-white point col-span-2 xl:col-span-1">Old Sheraton Street, Hurghada, Red Sea, Egypt</div>
+            <a class="text-white phone hoverunderline after:bg-white w-max " href="tel:+777777777">+ 777 77-77-77</a>
+            <a class="text-white mail hoverunderline after:bg-white w-max " href="mailto:VivedReef@gmail.com">VivedReef@gmail.com</a>
+          </div>
+        
+          <div class="page-text3 flex gap-61 xl:col-span-2">
+            <div class="text-white">© 2017 - 2022</div>
+            <a class="text-white hoverunderline after:bg-white" href="#">Политика конфиденциальности</a>
+          </div>
+        
+          <div class="page-text3 flex gap-61 xl:col-span-2">
+            <a class="text-white hoverunderline after:bg-white " href="https://bydesign.by/">Разработка Студия Яр</a>
+          </div>
+        </footer>
+    </div>
+
+    <!-- Modal-->
+    <div class="regModal bg-[rgba(0,0,0,0.6)] fixed top-0 left-0 w-full h-full z-[1000] flex items-center justify-center opacity-0 px-20"
+      id="modal" hidden>
+    
+      <div class="p-60 xl:px-20 xl:py-50 relative rounded-20 bg-white w-max h-full max-h-[61rem] xl:max-h-[48rem] overflow-auto">
+        <button class="close-button absolute top-20 xl:top-15 right-20 xl:right-15">
+          <svg class="w-17 h-17 object-contain">
+            <use href='#crossIcon'></use>
+          </svg>
+        </button>
+    
+        <form action="#" class="flex flex-col gap-30 xl:gap-20 max-w-[40rem]">
+          <div class="space-y-20 xl:space-y-10">
+            <h2 class="page-h2 text-center">Оставить заявку</h2>
+            <div class="page-text2 text-center">
+              У вас есть вопросы? Заполните форму и наши специалисты свяжутся с вами
+            </div>
+          </div>
+    
+          <div class="space-y-10">
+            <div class="input-container relative w-full">
+              <input type="text" name="name" class="custom-input w-full" placeholder="Ваше имя" required>
+            </div>
+      
+            <div class="input-container relative w-full error">
+              <input type="tel" name="tel" class="custom-input w-full" placeholder="Телефон" required>
+            </div>
+      
+            <div class="input-container relative w-full">
+              <input type="email" name="mail" class="custom-input w-full" placeholder="E-mail" required>
+            </div>
+          </div>
+    
+          <div class="space-y-10">
+            <div class="page-text2 text-center">
+              Нажимая кнопку отправить, вы соглашаетесь на обработку персональных данных
+            </div>
+      
+            <button type="submit" class="page-button !w-full page-text1">Отправить</button>
+          </div>
+    
+        </form>
+      </div>
+    </div>
+    <!-- FeedBack-->
+    <div class="regModal bg-[rgba(0,0,0,0.6)] fixed top-0 left-0 w-full h-full z-[1001] flex items-center justify-center px-20 opacity-0"
+      id="feedback" hidden>
+    
+      <div class="p-60 xl:px-20 xl:py-50 relative rounded-10 bg-white w-max overflow-auto">
+        <button class="close-button absolute top-20 xl:top-15 right-20 xl:right-15">
+          <svg class="w-17 h-17 object-contain">
+            <use href='#crossIcon'></use>
+          </svg>
+        </button>
+    
+        <div class="space-y-20 xl:space-y-10 max-w-[40rem]">
+          <h2 class="page-h2 text-center">Спасибо за заявку</h2>
+          <div class="page-text2 text-center">
+            Ваша заявка принята, наши специалисты свяжутся с вами в ближайшее время
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Order-->
+    <div class="regModal bg-[rgba(0,0,0,0.6)] fixed top-0 left-0 w-full h-full z-[1000] flex items-center justify-center opacity-0 px-20"
+      id="order-modal" hidden>
+    
+      <div class="p-60 xl:px-20 xl:py-50 relative rounded-20 bg-white w-max h-full max-h-[74rem] xl:max-h-[60rem] overflow-auto">
+        <button class="close-button absolute top-20 xl:top-15 right-20 xl:right-15">
+          <svg class="w-17 h-17 object-contain">
+            <use href='#crossIcon'></use>
+          </svg>
+        </button>
+    
+        <form action="#" class="flex flex-col gap-30 xl:gap-20 max-w-[40rem]">
+          <div class="space-y-20 xl:space-y-10">
+            <h2 class="page-h2 w-[110%] xl:w-full">Бронирование тура</h2>
+            <div class="page-text2 grid grid-cols-maxfr gap-10">
+              <div>Маршрут</div>
+              <input class="pointer-events-none text-14 leading-20 font-bold" type="hidden" name="MYtitle" value="">
+              <div class="text-16 sm:text-14 leading-22 sm:leading-20 font-bold" data-name="MYtitle"></div>
+              <div>Дата</div>
+              <input class="pointer-events-none text-14 leading-20 font-bold" type="hidden" name="MYdata" value="">
+              <div class="text-16 sm:text-14 leading-22 sm:leading-20 font-bold" data-name="MYdata"></div>
+              <div>Цена</div>
+              <div class="text-16 sm:text-14 leading-22 sm:leading-20 font-bold custom-after" data-name="MYpricePerPerson" data-after=" / персона"></div>
+              <input class="pointer-events-none text-14 leading-20 font-bold w-50" type="hidden" name="MYpricePerPerson" value="">
+            </div>
+          </div>
+    
+          <div class="space-y-10">
+            <div class="input-container relative w-full">
+              <input type="text" name="name" class="custom-input w-full" placeholder="Ваше имя" required>
+            </div>
+      
+            <div class="input-container relative w-full">
+              <input type="tel" name="tel" class="custom-input w-full" placeholder="Телефон" required>
+            </div>
+      
+            <div class="input-container relative w-full">
+              <input type="email" name="mail" class="custom-input w-full" placeholder="E-mail" required>
+            </div>
+    
+            <div class="input-container relative w-full">
+              <input type="number" name="numberOfpeople" class="custom-input w-full" placeholder="Количество человек" required>
+            </div>
+          </div>
+    
+          <div class="space-y-10">
+            <div class="page-text2 text-center">
+              Нажимая кнопку отправить, вы соглашаетесь на обработку персональных данных
+            </div>
+      
+            <button type="submit" class="page-button !w-full page-text1">Отправить</button>
+          </div>
+    
+        </form>
+      </div>
+    </div>
+    <!-- JS -->
+    <script src="assets/js/vendor.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    
+    <script>
+        window.onload = function() { preloader.style.opacity = "0"; setTimeout(() => preloader.style.display = 'none', 300);}
+    </script>
+</body>
+
+</html>
