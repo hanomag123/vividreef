@@ -22,7 +22,7 @@ const pug = require('gulp-pug');
 
 /* Paths */
 const srcPath = "src/";
-const distPath = "dist/";
+const distPath = "build/dist/";
 const path = {
   build: {
     html: distPath,
