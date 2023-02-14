@@ -323,11 +323,6 @@ document.addEventListener("DOMContentLoaded", () => {
     this.removeEventListener('transitionend', hideaftertransition);
   }
 
-  function hideaftertransition() {
-    this.hidden = true
-    this.removeEventListener('transitionend', hideaftertransition);
-  }
-
   if (buttonsModal.length) {
     buttonsModal.forEach(el => el.addEventListener('click', modalHandler));
   }
@@ -421,35 +416,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function enableScroll() {
     document.documentElement.style.setProperty('scroll-behavior', null);
     window.onscroll = function () { };
-  }
-
-  for (const form of document.forms) {
-    form.addEventListener('submit', function () {
-      event.preventDefault();
-      const formData = new FormData(this);
-      const parent = this.closest('.regModal');
-      const feedback = document.querySelector('#feedback');
-
-      if (this.dataset.id === 'My-order-modal') {
-        return
-      }
-
-      for(const key of formData.entries()) {
-        console.log(key);
-      }
-
-      this.reset();
-
-      if (parent) {
-        modalHandler.apply(parent);
-      } else {
-        return
-      }
-
-      if (feedback) {
-        modalHandler.apply(feedback);
-      }
-    });
   }
 
   const orderModels = document.querySelectorAll('[data-id="My-order-modal"]');
