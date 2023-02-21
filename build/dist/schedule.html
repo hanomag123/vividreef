@@ -10,8 +10,7 @@
     <meta name="description" content="">
     <title></title>
     
-    <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.6/css/swiper.css"> -->
+    <link rel="stylesheet" href="assets/css/vendor/datepicker.minimal.css">
     <link rel="stylesheet" href="assets/css/vendor/swiper426.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <!-- CSS only -->
@@ -299,9 +298,12 @@
             
             
                       <div class="date-container">
-                        <input type="text" autocomplete="off" name="dateStart"
+                        <button type="button" class="start date-input text-start !text-gray custom-input !py-22 sm:!py-[1.75rem] w-[32.2rem] sm:w-full !pr-40">Выберите дату</button>
+                        <!-- <input type="" autocomplete="off" name="dateStart"
                           class="start date-input custom-input !py-22 sm:!py-[1.75rem] w-[32.2rem] sm:w-full !pr-40"
-                          placeholder="Выберите дату">
+                          placeholder="Выберите дату"> -->
+                          <input type="hidden" id="dstart" name="dateStart">
+                          <input type="hidden" id="dend" name="dateEnd">
                       </div>
             
                       <div class="custom-select w-[20.6rem] xl:w-full">

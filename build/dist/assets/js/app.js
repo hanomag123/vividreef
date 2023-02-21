@@ -544,38 +544,84 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", closeAllSelect);
 
   const date1 = document.querySelector('.start');
-
-  if (date1) {
-    const picker = datepicker(date1, {
-      customMonths: ['Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь' ],
-      customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-      showAllDates: true,
-      overlayPlaceholder: 'Год',
-      overlayButton: "Выбрать",
-      formatter: (input, date, instance) => {
-        const data = formatDate(date);
-        input.value = data
+  const start = document.querySelector('#dstart');
+  const end = document.querySelector('#dend')
+  if (date1 && start && end) {
+    const picker = new Datepicker('.start', {
+      multiple: true,
+      ranged: true,
+      i18n: {
+        months: ['Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь' ], 
+        weekdays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
       },
-      id: 1
+      templates: {
+        header: [
+          '<header class="datepicker__header">',  
+            '<span class="flex gap-10 items-center">',
+            '<span class="datepicker__title"><%= renderMonthSelect() %></span>',
+            '<span class="datepicker__title"><%= renderYearSelect() %></span>',
+            '</span>',
+            '<span class="flex gap-20 items-center">',
+            '<a class="datepicker__prev<%= (hasPrev) ? "" : " is-disabled" %>" data-prev></a>',
+            '<a class="datepicker__next<%= (hasNext) ? "" : " is-disabled" %>" data-next></a>', 
+            '</span>',
+          '</header>'
+        ].join(''),
+      },
+      toValue: (date) => {
+        const arr = date.split(',')
+        if (arr[0] === '') {
+          return
+        }
+
+        arr.forEach((el, i) => {
+          if (i === 0) {
+            start.value = el
+          }
+          if (i === 1) {
+            end.value = el
+          } else {
+            end.value = ''
+          }
+        })
+      }
     });
+
   }
+
+
+
+  // if (date1) {
+  //   const picker = datepicker(date1, {
+  //     customMonths: ['Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь' ],
+  //     customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+  //     showAllDates: true,
+  //     overlayPlaceholder: 'Год',
+  //     overlayButton: "Выбрать",
+  //     formatter: (input, date, instance) => {
+  //       const data = formatDate(date);
+  //       input.value = data
+  //     },
+  //     id: 1
+  //   });
+  // }
 
   const date2 = document.querySelector('.end') 
 
-if (date2) {
-  const picker2 = datepicker(date2, {
-    customMonths: ['Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь' ],
-    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-    showAllDates: true,
-    overlayPlaceholder: 'Год',
-    overlayButton: "Выбрать",
-    formatter: (input, date, instance) => {
-      const data = formatDate(date);
-      input.value = data;
-    },
-    id: 1
-  });
-}
+// if (date2) {
+//   const picker2 = datepicker(date2, {
+//     customMonths: ['Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь' ],
+//     customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+//     showAllDates: true,
+//     overlayPlaceholder: 'Год',
+//     overlayButton: "Выбрать",
+//     formatter: (input, date, instance) => {
+//       const data = formatDate(date);
+//       input.value = data;
+//     },
+//     id: 1
+//   });
+// }
 
 const filterButton = document.querySelectorAll('.filter-button');
 const filterPanels = document.querySelectorAll('.filter-panel');
