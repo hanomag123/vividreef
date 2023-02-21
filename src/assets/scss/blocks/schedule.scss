@@ -332,9 +332,10 @@
   &::before {
     content: '';
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.5 11.5L6.5 6L0.500001 0.499999' stroke='%23FAFAFA' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.5 11.5L11.5 6L6.5 0.499999' stroke='%23FAFAFA' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
-    @apply w-12 h-12 object-contain fill-transparent;
+    @apply w-12 h-12 fill-transparent;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
   }
 }
 
@@ -411,5 +412,14 @@
   border-radius: 1rem;
   @include breakpoint($sm-bp) {
     width: calc(100% - 4rem);
+  }
+}
+
+.datepicker__year, .datepicker__month {
+  select {
+    width: calc(100% + 6rem)!important;
+    left: -2rem!important;
+    height: 3rem!important;
+    top: -0.5rem!important;
   }
 }

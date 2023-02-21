@@ -525,19 +525,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-  
-  function formatDate(date) {
-
-    var dd = date.getDate();
-    if (dd < 10) dd = '0' + dd;
-  
-    var mm = date.getMonth() + 1;
-    if (mm < 10) mm = '0' + mm;
-  
-    var yy = date.getFullYear();
-    if (yy < 10) yy = '0' + yy;
-    return dd + '.' + mm + '.' + yy;
-  }
 
   /* If the user clicks anywhere outside the select box,
   then close all select boxes: */
@@ -545,11 +532,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const date1 = document.querySelector('.start');
   const start = document.querySelector('#dstart');
-  const end = document.querySelector('#dend')
+  const end = document.querySelector('#dend');
+
   if (date1 && start && end) {
     const picker = new Datepicker('.start', {
       multiple: true,
       ranged: true,
+      separator: '-',
       i18n: {
         months: ['Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь' ], 
         weekdays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
@@ -558,8 +547,8 @@ document.addEventListener("DOMContentLoaded", () => {
         header: [
           '<header class="datepicker__header">',  
             '<span class="flex gap-10 items-center">',
-            '<span class="datepicker__title"><%= renderMonthSelect() %></span>',
-            '<span class="datepicker__title"><%= renderYearSelect() %></span>',
+            '<span class="datepicker__title datepicker__month"><%= renderMonthSelect() %></span>',
+            '<span class="datepicker__title datepicker__year"><%= renderYearSelect() %></span>',
             '</span>',
             '<span class="flex gap-20 items-center">',
             '<a class="datepicker__prev<%= (hasPrev) ? "" : " is-disabled" %>" data-prev></a>',
@@ -569,10 +558,13 @@ document.addEventListener("DOMContentLoaded", () => {
         ].join(''),
       },
       toValue: (date) => {
-        const arr = date.split(',')
+        const arr = date.split('-')
         if (arr[0] === '') {
           return
         }
+
+        date1.innerHTML = date
+        date1.classList.remove('!text-gray')
 
         arr.forEach((el, i) => {
           if (i === 0) {
@@ -591,38 +583,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // if (date1) {
-  //   const picker = datepicker(date1, {
-  //     customMonths: ['Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь' ],
-  //     customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-  //     showAllDates: true,
-  //     overlayPlaceholder: 'Год',
-  //     overlayButton: "Выбрать",
-  //     formatter: (input, date, instance) => {
-  //       const data = formatDate(date);
-  //       input.value = data
-  //     },
-  //     id: 1
-  //   });
-  // }
-
-  const date2 = document.querySelector('.end') 
-
-// if (date2) {
-//   const picker2 = datepicker(date2, {
-//     customMonths: ['Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь' ],
-//     customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-//     showAllDates: true,
-//     overlayPlaceholder: 'Год',
-//     overlayButton: "Выбрать",
-//     formatter: (input, date, instance) => {
-//       const data = formatDate(date);
-//       input.value = data;
-//     },
-//     id: 1
-//   });
-// }
-
 const filterButton = document.querySelectorAll('.filter-button');
 const filterPanels = document.querySelectorAll('.filter-panel');
 
@@ -638,6 +598,16 @@ if (filterButton.length) {
     });
   });
 }
+const xl = window.matchMedia('(max-width: 1024px)')
+window.addEventListener('resize', () => {
+  if (!xl.matches) {
+    const but = document.querySelector('.filter-button.active')
+    if (but) {
+      but.classList.remove('active')
+      enableScroll();
+    }
+  }
+})
 if (filterPanels.length) {
   filterPanels.forEach(el => {
     el.addEventListener('click', function () {

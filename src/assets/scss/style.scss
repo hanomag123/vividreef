@@ -52,6 +52,9 @@ html {
   box-sizing: inherit;
   font-family: 'Inter';
   color: var(--black);
+  @include breakpoint($cos-bp) {
+    font-size: max(1em,10px);
+  }
 }
 
 body {
