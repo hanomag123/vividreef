@@ -366,41 +366,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   addMask();
 
-  function addMaskDate() {
-    [].forEach.call(document.querySelectorAll('input.date-input'), function (input) {
-      let keyCode;
-      function mask(event) {
-        event.keyCode && (keyCode = event.keyCode);
-        let matrix = "__.__.____",
-          i = 0,
-          def = matrix.replace(/\D/g, ""),
-          val = this.value.replace(/\D/g, ""),
-          new_value = matrix.replace(/[_\d]/g, function (a) {
-            return i < val.length ? val.charAt(i++) || def.charAt(i) : a
-          });
-        i = new_value.indexOf("_");
-        if (i != -1) {
-          new_value = new_value.slice(0, i);
-        }
-        let reg = matrix.substr(0, this.value.length).replace(/_+/g,
-          function (a) {
-            return "\\d{1," + a.length + "}"
-          }).replace(/[+()]/g, "\\$&");
-        reg = new RegExp("^" + reg + "$");
-        if (!reg.test(this.value) || keyCode > 47 && keyCode < 58) this.value = new_value;
-        if (event.type == "blur") this.value = ""
-      }
-
-      input.addEventListener("input", mask, false);
-      input.addEventListener("focus", mask, false);
-      input.addEventListener("blur", mask, false);
-      input.addEventListener("keydown", mask, false);
-
-    });
-
-  }
-  addMaskDate();
-
   function disableScroll() {
     // Get the current page scroll position
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -538,7 +503,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const picker = new Datepicker('.start', {
       multiple: true,
       ranged: true,
-      separator: '-',
+      separator: ' - ',
       i18n: {
         months: ['Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь' ], 
         weekdays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
@@ -558,11 +523,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ].join(''),
       },
       toValue: (date) => {
-        const arr = date.split('-')
+        const arr = date.split(' - ')
         if (arr[0] === '') {
           return
         }
-
         date1.innerHTML = date
         date1.classList.remove('!text-gray')
 
@@ -572,6 +536,13 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           if (i === 1) {
             end.value = el
+            if (picker.length) {
+              picker.forEach(el => {
+                if (el._isOpen) {
+                  el.hide()
+                }
+              })
+            } 
           } else {
             end.value = ''
           }

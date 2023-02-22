@@ -3290,6 +3290,10 @@ svg {
   top: -0.5rem !important;
 }
 
+.date-input:focus {
+  outline: none;
+}
+
 .datepicker {
   width: 100%;
   display: block;
@@ -3301,6 +3305,9 @@ svg {
   padding-left: 2rem;
   padding-bottom: 2rem;
   background: var(--white);
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   /* серый */
   border: 0.1rem solid #616465;
   border-radius: 1rem;
