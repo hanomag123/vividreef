@@ -3558,6 +3558,53 @@ svg {
     padding: 1.5rem 2rem;
   }
 }
+.days-list .days-list__item .days-list__block ul{
+  margin-top: 2rem;
+}
+.days-list .days-list__item .days-list__block ul li {
+  padding-left: 2.5rem;
+  position: relative;
+}
+@media (max-width: 500px) {
+  .days-list .days-list__item .days-list__block ul li {
+    padding-left: 2.1rem;
+  }
+}
+.days-list .days-list__item .days-list__block ul li::before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  left: 1rem;
+}
+@media (max-width: 500px) {
+  .days-list .days-list__item .days-list__block ul li::before {
+    left: 0.8rem;
+  }
+}
+.days-list .days-list__item .days-list__block ul {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 140%;
+}
+.days-list .days-list__item .days-list__block ul p + p {
+  margin-top: 2rem;
+}
+@media (max-width: 500px) {
+  .days-list .days-list__item .days-list__block ul p + p {
+    margin-top: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .days-list .days-list__item .days-list__block ul {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 500px){
+  .days-list .days-list__item .days-list__block ul{
+    margin-top: 1rem;
+  }
+}
+
 .custom-list li {
   padding-left: 2.5rem;
   position: relative;

@@ -85,3 +85,15 @@
     }
   }
 }
+
+.route-block {
+  p {
+    @apply  page-text1 mt-10;
+  }
+  ul {
+    @apply custom-list page-text1 mt-10 space-y-15 sm:space-y-5;
+  }
+  h4 {
+    @apply page-h4 mt-40 sm:mt-20;
+  }
+}
