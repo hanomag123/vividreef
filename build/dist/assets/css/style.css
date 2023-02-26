@@ -679,7 +679,7 @@ video {
 .max-w-\[65\.4rem\]{
   max-width: 65.4rem;
 }
-.max-w-\[40rem\]{
+.max-w-400{
   max-width: 40rem;
 }
 .translate-x-\[-50\%\]{
@@ -3558,7 +3558,6 @@ svg {
     padding: 1.5rem 2rem;
   }
 }
-
 .custom-list li {
   padding-left: 2.5rem;
   position: relative;
