@@ -19,6 +19,9 @@ module.exports = {
       max3: "repeat(3, max-content)",
       custom: "repeat(auto-fit,minmax(100px,1fr))"
     },
+    maxWidth: {
+      "400": "40rem"
+    },
     boxShadow: {
       'custom': '0px 0.4rem 1.6rem rgba(16, 164, 189, 0.6)',
     },
