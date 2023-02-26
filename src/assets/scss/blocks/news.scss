@@ -102,3 +102,24 @@
 .rewiew-item {
   @apply first:col-span-2 last:col-span-2 sm:first:col-span-1 sm:last:col-span-1 bg-blue2 rounded-10 p-30 sm:p-10 min-h-[39.5rem] xl:min-h-0 grid;
 }
+
+.news-block {
+  h2 {
+    @apply page-h3 sm:text-24 sm:leading-29;
+  }
+  p {
+    @apply page-text1 leading-22 sm:leading-20;
+  }
+  p + h1, p + h2, p + h3, p + h4 {
+    @apply mt-40 sm:mt-30;
+  }
+  h1 + p, h2 + p, h3 + p, h4 + p {
+    @apply mt-20 sm:mt-10;
+  }
+  p + p {
+    margin-top: 2rem;
+    @include breakpoint($sm-bp) {
+      margin-top: 0;
+    }
+  }
+}

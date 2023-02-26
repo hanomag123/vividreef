@@ -1040,9 +1040,6 @@ video {
 .uppercase{
   text-transform: uppercase;
 }
-.\!leading-22{
-  line-height: 2.2rem !important;
-}
 .leading-20{
   line-height: 2rem;
 }
@@ -3626,6 +3623,99 @@ svg {
   }
 }
 
+.route-block p{
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 140%;
+}
+
+.route-block p p + p {
+  margin-top: 2rem;
+}
+
+@media (max-width: 500px) {
+  .route-block p p + p {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .route-block p {
+    font-size: 1.4rem;
+  }
+}
+.route-block ul{
+  margin-top: 1rem;
+}
+.route-block ul > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+.route-block ul li {
+  padding-left: 2.5rem;
+  position: relative;
+}
+@media (max-width: 500px) {
+  .route-block ul li {
+    padding-left: 2.1rem;
+  }
+}
+.route-block ul li::before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  left: 1rem;
+}
+@media (max-width: 500px) {
+  .route-block ul li::before {
+    left: 0.8rem;
+  }
+}
+.route-block ul {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 140%;
+}
+.route-block ul p + p {
+  margin-top: 2rem;
+}
+@media (max-width: 500px) {
+  .route-block ul p + p {
+    margin-top: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .route-block ul {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 500px){
+  .route-block ul > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+  }
+}
+.route-block h4{
+  margin-top: 4rem;
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 2.4rem;
+}
+@media (max-width: 1024px) {
+  .route-block h4 {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+}
+@media (max-width: 500px){
+  .route-block h4{
+    margin-top: 2rem;
+  }
+}
+
 .image-rotate-left {
   position: absolute;
   top: 2.5rem;
@@ -3845,6 +3935,75 @@ svg {
   }
 }
 
+.news-block h2 {
+  font-weight: 900;
+  font-size: 2.6rem;
+  line-height: 3.1rem;
+  /* identical to box height */
+}
+
+@media (max-width: 1024px) {
+  .news-block h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+}
+
+@media (max-width: 500px){
+  .news-block h2{
+    line-height: 2.9rem;
+    font-size: 2.4rem;
+  }
+}
+.news-block p{
+  line-height: 2.2rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 140%;
+}
+.news-block p p + p {
+  margin-top: 2rem;
+}
+@media (max-width: 500px) {
+  .news-block p p + p {
+    margin-top: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .news-block p {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 500px){
+  .news-block p{
+    line-height: 2rem;
+  }
+}
+.news-block p + h1, .news-block p + h2, .news-block p + h3, .news-block p + h4{
+  margin-top: 4rem;
+}
+@media (max-width: 500px){
+  .news-block p + h1, .news-block p + h2, .news-block p + h3, .news-block p + h4{
+    margin-top: 3rem;
+  }
+}
+.news-block h1 + p, .news-block h2 + p, .news-block h3 + p, .news-block h4 + p{
+  margin-top: 2rem;
+}
+@media (max-width: 500px){
+  .news-block h1 + p, .news-block h2 + p, .news-block h3 + p, .news-block h4 + p{
+    margin-top: 1rem;
+  }
+}
+.news-block p + p {
+  margin-top: 2rem;
+}
+@media (max-width: 500px) {
+  .news-block p + p {
+    margin-top: 0;
+  }
+}
+
 .hide {
   display: none;
 }
@@ -3873,52 +4032,52 @@ svg {
   }
 }
 
-.h1, .page-h1 {
+h1, .page-h1 {
   font-weight: 900;
   font-size: 5rem;
   line-height: 6.1rem;
   /* identical to box height */
 }
 @media (max-width: 1024px) {
-  .h1, .page-h1 {
+  h1, .page-h1 {
     font-size: 3rem;
     line-height: 3.6rem;
   }
 }
 
-.h2, .page-h2 {
+h2, .page-h2 {
   font-weight: 900;
   font-size: 4rem;
   line-height: 4.8rem;
   /* identical to box height */
 }
 @media (max-width: 1024px) {
-  .h2, .page-h2 {
+  h2, .page-h2 {
     font-size: 2.4rem;
     line-height: 2.9rem;
   }
 }
 
-.h3, .page-h3 {
+h3, .page-h3 {
   font-weight: 900;
   font-size: 2.6rem;
   line-height: 3.1rem;
   /* identical to box height */
 }
 @media (max-width: 1024px) {
-  .h3, .page-h3 {
+  h3, .page-h3 {
     font-size: 2rem;
     line-height: 2.4rem;
   }
 }
 
-.h4, .page-h4 {
+h4, .page-h4 {
   font-weight: 900;
   font-size: 2rem;
   line-height: 2.4rem;
 }
 @media (max-width: 1024px) {
-  .h4, .page-h4 {
+  h4, .page-h4 {
     font-size: 1.6rem;
     line-height: 1.9rem;
   }
@@ -4414,14 +4573,11 @@ input[type=number] {
   .sm\:\!leading-24{
     line-height: 2.4rem !important;
   }
-  .sm\:\!leading-29{
-    line-height: 2.9rem !important;
-  }
-  .sm\:\!leading-20{
-    line-height: 2rem !important;
-  }
   .sm\:\!leading-19{
     line-height: 1.9rem !important;
+  }
+  .sm\:\!leading-29{
+    line-height: 2.9rem !important;
   }
   .sm\:\!leading-22{
     line-height: 2.2rem !important;
@@ -4438,11 +4594,11 @@ input[type=number] {
   .sm\:\!text-20{
     font-size: 2rem !important;
   }
-  .sm\:\!text-24{
-    font-size: 2.4rem !important;
-  }
   .sm\:\!text-16{
     font-size: 1.6rem !important;
+  }
+  .sm\:\!text-24{
+    font-size: 2.4rem !important;
   }
   .sm\:\!text-12{
     font-size: 1.2rem !important;
