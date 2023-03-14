@@ -1,5 +1,5 @@
 .header {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -9,10 +9,15 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      transition: background-color .3s;
       @include breakpoint($xl-bp) {
             padding-top: 2.6rem;
       }
 }
+
+.header--active {
+      background-color: rgba($color: #abb8b9, $alpha: 0.8);
+    }
 
 .page-dark {
       .header {

@@ -78,6 +78,14 @@
                 <path d="M6.02222 10.6556C7.62222 13.8 10.2 16.3778 13.3444 17.9778L15.7889 15.5333C16.1 15.2222 16.5333 15.1333 16.9222 15.2556C18.1667 15.6667 19.5 15.8889 20.8889 15.8889C21.1836 15.8889 21.4662 16.006 21.6746 16.2143C21.8829 16.4227 22 16.7053 22 17V20.8889C22 21.1836 21.8829 21.4662 21.6746 21.6746C21.4662 21.8829 21.1836 22 20.8889 22C15.8792 22 11.0748 20.0099 7.53243 16.4676C3.99007 12.9252 2 8.12076 2 3.11111C2 2.81643 2.11706 2.53381 2.32544 2.32544C2.53381 2.11706 2.81643 2 3.11111 2H7C7.29469 2 7.5773 2.11706 7.78567 2.32544C7.99405 2.53381 8.11111 2.81643 8.11111 3.11111C8.11111 4.5 8.33333 5.83333 8.74444 7.07778C8.86667 7.46667 8.77778 7.9 8.46667 8.21111L6.02222 10.6556Z"/>
             </g>
         </symbol>
+            
+            
+        <symbol id="telegramIcon" viewBox="0 0 24 24">
+            <g>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24ZM12.5189 9.00553C11.4441 9.45256 9.29616 10.3778 6.07494 11.7812C5.55186 11.9892 5.27785 12.1927 5.25291 12.3917C5.21075 12.728 5.63186 12.8604 6.20531 13.0407C6.28331 13.0652 6.36413 13.0906 6.44699 13.1176C7.01117 13.301 7.77009 13.5155 8.16462 13.524C8.5225 13.5318 8.92193 13.3842 9.36292 13.0814C12.3726 11.0498 13.9262 10.0229 14.0238 10.0008C14.0926 9.98516 14.1879 9.96553 14.2525 10.023C14.3171 10.0804 14.3108 10.1891 14.3039 10.2183C14.2622 10.3962 12.6092 11.933 11.7538 12.7283C11.4871 12.9762 11.2979 13.152 11.2593 13.1922C11.1726 13.2822 11.0844 13.3673 10.9995 13.4491C10.4754 13.9543 10.0823 14.3332 11.0213 14.952C11.4725 15.2493 11.8336 15.4952 12.1938 15.7405C12.5872 16.0084 12.9795 16.2756 13.4872 16.6084C13.6165 16.6932 13.7401 16.7813 13.8604 16.8671C14.3182 17.1934 14.7295 17.4867 15.2376 17.4399C15.5329 17.4127 15.8379 17.1351 15.9928 16.307C16.3588 14.3501 17.0784 10.1101 17.2447 8.36285C17.2592 8.20977 17.2409 8.01386 17.2262 7.92786C17.2115 7.84186 17.1807 7.71932 17.0689 7.62862C16.9365 7.52119 16.7322 7.49854 16.6407 7.50007C16.2251 7.50747 15.5875 7.72919 12.5189 9.00553Z"/>
+            </g>
+        </symbol>
+            
     
         <symbol id="mailIcon" viewBox="0 0 24 24">
             <g>
@@ -150,6 +158,13 @@
                       <div class="page-text1 sm:!text-12 sm:!leading-15 flex flex-col gap-20">
                         <div class="point point--blue">Old Sheraton Street, Hurghada, Red Sea, Egypt</div>
                         <a class="phone phone--blue" href="tel:+777777777">+ 777 77-77-77</a>
+                        <a class="phone phone--blue" href="tel:+777777777">+ 777 77-77-77</a>
+                        <a href="https://t.me/+777777777" class="flex gap-10 hoverunderline">
+                          <svg class="w-24 xl:w-16 h-24 xl:h-16 fill-blue">
+                            <use href='#telegramIcon'></use>
+                          </svg>
+                          + 777 77-77-77
+                        </a>
                         <a class="mail mail--blue" href="mailto:VivedReef@gmail.com">VivedReef@gmail.com</a>
                       </div>
                     
@@ -338,7 +353,7 @@
                 </div>
             
                 <div class="grid grid-cols-maxfr xl:flex xl:flex-col-reverse gap-60 xl:gap-30 mt-40 sm:mt-50">
-                  <div class="swiper gallery-top3 rounded-10 w-[90rem] xl:w-full h-[52.2rem] sm:h-[27.8rem] relative" data-thumbsgallery="3">
+                  <div class="swiper gallery-top2 rounded-10 w-[90rem] xl:w-full h-[52.2rem] sm:h-[27.8rem] relative" data-thumbsgallery="3">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide gallery-top-slide">
                         <img class="w-full h-full object-cover" src="./assets/images/ship/ship-7.jpg" alt="tour">
@@ -361,7 +376,96 @@
                     </div>
                     <div
                       class="absolute left-[50%] translate-x-[-50%] bottom-30 sm:bottom-7 w-[calc(100%_-_6rem)] sm:w-[calc(100%_-_2rem)] p-20 sm:p-10 bg-blue2 z-10 flex items-center justify-between rounded-10">
-                      <div class="swiper gallery-thumbs3" data-thumbs="3">
+                      <div class="swiper gallery-thumbs2" data-thumbs="3">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="bg-blue3 rounded-10 overflow-hidden h-62 w-62 sm:w-37 sm:h-38">
+                              <img class="w-full h-full object-cover" src="#" alt="tour">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                
+                      <div class="flex gap-20">
+                        <div href="#"
+                          class="rounded-full bg-blue w-54 xl:w-38 h-54 xl:h-38 flex items-center justify-center button-animation prev">
+                          <svg class="stroke-white w-14 xl:10 h-21 xl:h-14 object-contain">
+                            <use href='#arrowIcon2'></use>
+                          </svg>
+                        </div>
+                        <div href="#"
+                          class="rounded-full bg-blue w-54 xl:w-38 h-54 xl:h-38 flex items-center justify-center button-animation next">
+                          <svg class="stroke-white w-14 xl:10 h-21 xl:h-14 object-contain">
+                            <use href='#arrowIcon'></use>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                  <div>
+                    <h3 class="page-h3 xl:!text-24 xl:!leading-29">Seawolf Dominator</h3>
+                    <div class="page-text1 mt-10">Описание яхты SEAWOLF Dominator длиной 42 м и шириной 8.5 м. Яхта имеет 9 двухместных кают и 3 сьюта и может разместить 24 пассажира. В каждой каюте центральное кондиционирование с </div>
+                    <h4 class="page-h4 mt-40 sm:mt-20">Удобства яхты</h4>
+                    <ul class="custom-list page-text1 mt-10 space-y-15 sm:space-y-5">
+                      <li>8 двухместных кают на нижней палубе с собственными сан.узлами с душеми и центральным кондиционированием с индивидуальным контролем</li>
+                      <li>3 каюты «сьют» на верхней палубе с двухспальными кроватями, собственными сан.узлами с душем и центральным кондиционированием с индивидуальным контролем</li>
+                      <li>1 двухместная каюта на верхней палубе с собственным сан.узлом с душем и центральным кондиционированием с индивидуальным контролем</li>
+                      <li>Во всех каютах и сьютах имеется мини-холодильник</li>
+                    </ul>
+              
+                    <ul class="grid grid-cols-3 xl:grid-cols-1 border-1 border-solid border-blue3 rounded-10 divide-x-1 xl:divide-x-0 xl:divide-y-1 divide-solid divide-blue3 mt-66 sm:mt-30">
+                      <li class="p-20 sm:p-10 flex flex-col items-center xl:space-y-10">
+                        <div class="page-text2 sm:!text-14 flex items-center gap-10">
+                          <svg class="w-25 h-25 sm:w-20 sm:h-20"><use href='#mansIcon'></use></svg>
+                          Количество пассажиров
+                        </div>
+                        <div class="page-h4 sm:!text-20 sm:!leading-24">24</div>
+                      </li>
+                      <li class="p-20 sm:p-10 flex flex-col items-center xl:space-y-10">
+                        <div class="page-text2 sm:!text-14 flex items-center gap-10">
+                          <svg class="w-25 h-25 sm:w-20 sm:h-20"><use href='#sofaIcon'></use></svg>
+                          Количество кают
+                        </div>
+                        <div class="page-h4 sm:!text-20 sm:!leading-24">12</div>
+                      </li>
+                      <li class="p-20 sm:p-10 flex flex-col items-center xl:space-y-10">
+                        <div class="page-text2 sm:!text-14 flex items-center gap-10">
+                          <svg class="w-25 h-25 sm:w-20 sm:h-20"><use href='#eatIcon'></use></svg>
+                          Питание и напитки
+                        </div>
+                        <div class="page-h4 sm:!text-20 sm:!leading-24">Да</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            
+                <div class="grid grid-cols-maxfr xl:flex xl:flex-col-reverse gap-60 xl:gap-30 mt-40 sm:mt-30">
+                  <div class="swiper gallery-top2 rounded-10 w-[90rem] xl:w-full h-[52.2rem] sm:h-[27.8rem] relative" data-thumbsgallery="2">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide gallery-top-slide">
+                        <img class="w-full h-full object-cover" src="./assets/images/ship/ship-1.jpg" alt="tour">
+                      </div>
+                      <div class="swiper-slide gallery-top-slide">
+                        <img class="w-full h-full object-cover" src="./assets/images/ship/ship-2.jpg" alt="tour">
+                      </div>
+                      <div class="swiper-slide gallery-top-slide">
+                        <img class="w-full h-full object-cover" src="./assets/images/ship/ship-3.jpg" alt="tour">
+                      </div>
+                      <div class="swiper-slide gallery-top-slide">
+                        <img class="w-full h-full object-cover" src="./assets/images/ship/ship-4.jpg" alt="tour">
+                      </div>
+                      <div class="swiper-slide gallery-top-slide">
+                        <img class="w-full h-full object-cover" src="./assets/images/ship/ship-5.jpg" alt="tour">
+                      </div>
+                      <div class="swiper-slide gallery-top-slide">
+                        <img class="w-full h-full object-cover" src="./assets/images/ship/ship-6.jpg" alt="tour">
+                      </div>
+                    </div>
+                    <div
+                      class="absolute left-[50%] translate-x-[-50%] bottom-30 sm:bottom-7 w-[calc(100%_-_6rem)] sm:w-[calc(100%_-_2rem)] p-20 sm:p-10 bg-blue2 z-10 flex items-center justify-between rounded-10">
+                      <div class="swiper gallery-thumbs2" data-thumbs="2">
                         <div class="swiper-wrapper">
                           <div class="swiper-slide">
                             <div class="bg-blue3 rounded-10 overflow-hidden h-62 w-62 sm:w-37 sm:h-38">
@@ -459,8 +563,16 @@
         
           <div class="footer__block page-text1 sm:!text-12 sm:!leading-15">
             <div class="text-white point col-span-2 xl:col-span-1">Old Sheraton Street, Hurghada, Red Sea, Egypt</div>
-            <a class="text-white phone hoverunderline after:bg-white w-max " href="tel:+777777777">+ 777 77-77-77</a>
-            <a class="text-white mail hoverunderline after:bg-white w-max " href="mailto:VivedReef@gmail.com">VivedReef@gmail.com</a>
+            <a class="text-white phone hoverunderline after:bg-white w-max" href="tel:+777777777">+ 777 77-77-77</a>
+            <a class="text-white phone hoverunderline after:bg-white w-max" href="tel:+777777777">+ 777 77-77-77</a>
+            <a class="text-white mail hoverunderline after:bg-white w-max"
+              href="mailto:VivedReef@gmail.com">VivedReef@gmail.com</a>
+            <a href="https://t.me/+777777777" class="flex gap-10 text-white hoverunderline after:bg-white w-max">
+              <svg class="w-24 xl:w-16 h-24 xl:h-16 fill-white">
+                <use href='#telegramIcon'></use>
+              </svg>
+              + 777 77-77-77
+            </a>
           </div>
         
           <div class="page-text3 flex gap-61 xl:col-span-2">

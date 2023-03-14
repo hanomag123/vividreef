@@ -75,14 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const gallerys = document.querySelectorAll('[data-thumbsgallery]');
   if (gallerys.length) {
     gallerys.forEach(el => {
-      const dataset = el.dataset.thumbsgallery
-      const thumb = el.querySelector(`[data-thumbs='${dataset}']`);
+      const thumb = el.querySelector(`[data-thumbs]`);
       if (thumb) {
         const swiperSlide = thumb.querySelector('.swiper-slide');
-        
+
         if (swiperSlide) {
           const parent = swiperSlide.parentElement
-          const images = el.querySelectorAll('.gallery-top-slide img') 
+          const images = el.querySelectorAll('.gallery-top-slide img')
           if (images.length) {
             images.forEach(img => {
               const clone = swiperSlide.cloneNode(true);
@@ -172,91 +171,142 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const galleryThumbs2 = new Swiper('.gallery-thumbs2', {
-    spaceBetween: 0,
-    slidesPerView: 'auto',
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    centerInsufficientSlides: true,
-    slideToClickedSlide: true,
-    breakpoints: {
-      // when window width is >= 1025px
-      // 1025: {
-      //   slidesPerView: 5,
-      // },
-    }
-  });
-  const galleryTop2 = new Swiper('.gallery-top2', {
-    spaceBetween: 10,
-    navigation: {
-      nextEl: '.gallery-top2 .next',
-      prevEl: '.gallery-top2 .prev',
-    },
-    thumbs: {
-      swiper: galleryThumbs2
-    },
-    rewind: true,
-    on: {
-      slideChange: function () {
-        let activeIndex = this.activeIndex + 1;
+  // const galleryThumbs2 = new Swiper('.gallery-thumbs2', {
+  //   spaceBetween: 0,
+  //   slidesPerView: 'auto',
+  //   watchSlidesVisibility: true,
+  //   watchSlidesProgress: true,
+  //   centerInsufficientSlides: true,
+  //   slideToClickedSlide: true,
+  //   breakpoints: {
+  //     // when window width is >= 1025px
+  //     // 1025: {
+  //     //   slidesPerView: 5,
+  //     // },
+  //   }
+  // });
+  // const galleryTop2 = new Swiper('.gallery-top2', {
+  //   spaceBetween: 10,
+  //   navigation: {
+  //     nextEl: '.gallery-top2 .next',
+  //     prevEl: '.gallery-top2 .prev',
+  //   },
+  //   thumbs: {
+  //     swiper: galleryThumbs2
+  //   },
+  //   rewind: true,
+  //   on: {
+  //     slideChange: function () {
+  //       let activeIndex = this.activeIndex + 1;
 
-        let activeSlide = document.querySelector(`.gallery-thumbs2 .swiper-slide:nth-child(${activeIndex})`);
-        let nextSlide = document.querySelector(`.gallery-thumbs2 .swiper-slide:nth-child(${activeIndex + 1})`);
-        let prevSlide = document.querySelector(`.gallery-thumbs2 .swiper-slide:nth-child(${activeIndex - 1})`);
+  //       let activeSlide = document.querySelector(`.gallery-thumbs2 .swiper-slide:nth-child(${activeIndex})`);
+  //       let nextSlide = document.querySelector(`.gallery-thumbs2 .swiper-slide:nth-child(${activeIndex + 1})`);
+  //       let prevSlide = document.querySelector(`.gallery-thumbs2 .swiper-slide:nth-child(${activeIndex - 1})`);
 
-        if (nextSlide && !nextSlide.classList.contains('swiper-slide-visible')) {
-          this.thumbs.swiper.slideNext();
-        } else if (prevSlide && !prevSlide.classList.contains('swiper-slide-visible')) {
-          this.thumbs.swiper.slidePrev();
+  //       if (nextSlide && !nextSlide.classList.contains('swiper-slide-visible')) {
+  //         this.thumbs.swiper.slideNext();
+  //       } else if (prevSlide && !prevSlide.classList.contains('swiper-slide-visible')) {
+  //         this.thumbs.swiper.slidePrev();
+  //       }
+
+  //     }
+  //   }
+  // });
+
+  // const galleryThumbs3 = new Swiper('.gallery-thumbs3', {
+  //   spaceBetween: 0,
+  //   slidesPerView: 'auto',
+  //   watchSlidesVisibility: true,
+  //   watchSlidesProgress: true,
+  //   centerInsufficientSlides: true,
+  //   slideToClickedSlide: true,
+  //   breakpoints: {
+  //     // when window width is >= 1025px
+  //     // 1025: {
+  //     //   slidesPerView: 5,
+  //     // },
+  //   }
+  // });
+  // const galleryTop3 = new Swiper('.gallery-top3', {
+  //   spaceBetween: 10,
+  //   navigation: {
+  //     nextEl: '.gallery-top3 .next',
+  //     prevEl: '.gallery-top3 .prev',
+  //   },
+  //   thumbs: {
+  //     swiper: galleryThumbs3
+  //   },
+  //   rewind: true,
+  //   on: {
+  //     slideChange: function () {
+  //       let activeIndex = this.activeIndex + 1;
+
+  //       let activeSlide = document.querySelector(`.gallery-thumbs3 .swiper-slide:nth-child(${activeIndex})`);
+  //       let nextSlide = document.querySelector(`.gallery-thumbs3 .swiper-slide:nth-child(${activeIndex + 1})`);
+  //       let prevSlide = document.querySelector(`.gallery-thumbs3 .swiper-slide:nth-child(${activeIndex - 1})`);
+
+  //       if (nextSlide && !nextSlide.classList.contains('swiper-slide-visible')) {
+  //         this.thumbs.swiper.slideNext();
+  //       } else if (prevSlide && !prevSlide.classList.contains('swiper-slide-visible')) {
+  //         this.thumbs.swiper.slidePrev();
+  //       }
+
+  //     }
+  //   }
+  // });
+
+  const swipers = document.querySelectorAll('.gallery-top2')
+
+  if (swipers.length) {
+    swipers.forEach(el => {
+      const swiper = el.querySelector('.gallery-thumbs2')
+      const galleryThumbs3 = new Swiper(swiper, {
+        spaceBetween: 0,
+        slidesPerView: 'auto',
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        centerInsufficientSlides: true,
+        slideToClickedSlide: true,
+        breakpoints: {
+          // when window width is >= 1025px
+          // 1025: {
+          //   slidesPerView: 5,
+          // },
         }
+      });
+      const galleryTop3 = new Swiper(el, {
+        spaceBetween: 10,
+        navigation: {
+          nextEl: '.gallery-top2 .next',
+          prevEl: '.gallery-top2 .prev',
+        },
+        thumbs: {
+          swiper: galleryThumbs3
+        },
+        rewind: true,
+        on: {
+          slideChange: function () {
+            let activeIndex = this.activeIndex + 1;
 
-      }
-    }
-  });
+            let activeSlide = swiper.querySelector(`.swiper-slide:nth-child(${activeIndex})`);
+            let nextSlide = swiper.querySelector(`.swiper-slide:nth-child(${activeIndex + 1})`);
+            let prevSlide = swiper.querySelector(`.swiper-slide:nth-child(${activeIndex - 1})`);
 
-  const galleryThumbs3 = new Swiper('.gallery-thumbs3', {
-    spaceBetween: 0,
-    slidesPerView: 'auto',
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    centerInsufficientSlides: true,
-    slideToClickedSlide: true,
-    breakpoints: {
-      // when window width is >= 1025px
-      // 1025: {
-      //   slidesPerView: 5,
-      // },
-    }
-  });
-  const galleryTop3 = new Swiper('.gallery-top3', {
-    spaceBetween: 10,
-    navigation: {
-      nextEl: '.gallery-top3 .next',
-      prevEl: '.gallery-top3 .prev',
-    },
-    thumbs: {
-      swiper: galleryThumbs3
-    },
-    rewind: true,
-    on: {
-      slideChange: function () {
-        let activeIndex = this.activeIndex + 1;
+            if (nextSlide && !nextSlide.classList.contains('swiper-slide-visible')) {
+              this.thumbs.swiper.slideNext();
+            } else if (prevSlide && !prevSlide.classList.contains('swiper-slide-visible')) {
+              this.thumbs.swiper.slidePrev();
+            }
 
-        let activeSlide = document.querySelector(`.gallery-thumbs3 .swiper-slide:nth-child(${activeIndex})`);
-        let nextSlide = document.querySelector(`.gallery-thumbs3 .swiper-slide:nth-child(${activeIndex + 1})`);
-        let prevSlide = document.querySelector(`.gallery-thumbs3 .swiper-slide:nth-child(${activeIndex - 1})`);
-
-        if (nextSlide && !nextSlide.classList.contains('swiper-slide-visible')) {
-          this.thumbs.swiper.slideNext();
-        } else if (prevSlide && !prevSlide.classList.contains('swiper-slide-visible')) {
-          this.thumbs.swiper.slidePrev();
+          }
         }
+      });
+    })
+  }
 
-      }
-    }
-  });
 
-  var mySwiper = new Swiper ('.swiper-container', {
+
+  var mySwiper = new Swiper('.swiper-container', {
     slidesPerView: 'auto',
     spaceBetween: 0,
     loop: true,
@@ -384,31 +434,31 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const orderModels = document.querySelectorAll('[data-id="My-order-modal"]');
-  
+
   if (orderModels.length) {
     orderModels.forEach(form => {
       form.addEventListener('submit', function () {
         event.preventDefault();
         const formData = new FormData(this);
-  
-          const orderModal = document.querySelector('#order-modal');
-          if (orderModal) {
-            const orderForm = orderModal.querySelector('form');
-            if (orderForm) {
-              for(let [key, value] of formData.entries()) {
-                const input = orderForm.querySelector(`input[name='${key}']`);
-                const div = orderForm.querySelector(`[data-name="${key}"]`)
-                if (input) {
-                  input.value = value;
-                }
-                if (div) {
-                  div.innerHTML = value
-                }
+
+        const orderModal = document.querySelector('#order-modal');
+        if (orderModal) {
+          const orderForm = orderModal.querySelector('form');
+          if (orderForm) {
+            for (let [key, value] of formData.entries()) {
+              const input = orderForm.querySelector(`input[name='${key}']`);
+              const div = orderForm.querySelector(`[data-name="${key}"]`)
+              if (input) {
+                input.value = value;
+              }
+              if (div) {
+                div.innerHTML = value
               }
             }
-            modalHandler.apply(orderModal);
-            
           }
+          modalHandler.apply(orderModal);
+
+        }
       })
     })
   }
@@ -433,33 +483,33 @@ document.addEventListener("DOMContentLoaded", () => {
       create a new DIV that will act as an option item: */
       c = document.createElement("DIV");
       c.innerHTML = selElmnt.options[j].innerHTML;
-      c.addEventListener("click", function(e) {
-          /* When an item is clicked, update the original select box,
-          and the selected item: */
-          var y, i, k, s, h, sl, yl, sel;
-          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-          sl = s.length;
-          h = this.parentNode.previousSibling;
-          sel = this.parentNode.previousSibling.classList.add('select-selected--active');
-          for (i = 0; i < sl; i++) {
-            if (s.options[i].innerHTML == this.innerHTML) {
-              s.selectedIndex = i;
-              h.innerHTML = this.innerHTML;
-              y = this.parentNode.getElementsByClassName("same-as-selected");
-              yl = y.length;
-              for (k = 0; k < yl; k++) {
-                y[k].removeAttribute("class");
-              }
-              this.setAttribute("class", "same-as-selected");
-              break;
+      c.addEventListener("click", function (e) {
+        /* When an item is clicked, update the original select box,
+        and the selected item: */
+        var y, i, k, s, h, sl, yl, sel;
+        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+        sl = s.length;
+        h = this.parentNode.previousSibling;
+        sel = this.parentNode.previousSibling.classList.add('select-selected--active');
+        for (i = 0; i < sl; i++) {
+          if (s.options[i].innerHTML == this.innerHTML) {
+            s.selectedIndex = i;
+            h.innerHTML = this.innerHTML;
+            y = this.parentNode.getElementsByClassName("same-as-selected");
+            yl = y.length;
+            for (k = 0; k < yl; k++) {
+              y[k].removeAttribute("class");
             }
+            this.setAttribute("class", "same-as-selected");
+            break;
           }
-          h.click();
+        }
+        h.click();
       });
       b.appendChild(c);
     }
     x[i].appendChild(b);
-    a.addEventListener("click", function(e) {
+    a.addEventListener("click", function (e) {
       /* When the select box is clicked, close any other select boxes,
       and open/close the current select box: */
       e.stopPropagation();
@@ -468,7 +518,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.classList.toggle("select-arrow-active");
     });
   }
-  
+
   function closeAllSelect(elmnt) {
     /* A function that will close all select boxes in the document,
     except the current select box: */
@@ -505,20 +555,20 @@ document.addEventListener("DOMContentLoaded", () => {
       ranged: true,
       separator: ' - ',
       i18n: {
-        months: ['Январь' , 'Февраль' , 'Март' , 'Апрель' , 'Май' , 'Июнь' , 'Июль' , 'Август' , 'Сентябрь' , 'Октябрь' , 'Ноябрь' , 'Декабрь' ], 
+        months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
         weekdays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
       },
       templates: {
         header: [
-          '<header class="datepicker__header">',  
-            '<span class="flex gap-10 items-center">',
-            '<span class="datepicker__title datepicker__month"><%= renderMonthSelect() %></span>',
-            '<span class="datepicker__title datepicker__year"><%= renderYearSelect() %></span>',
-            '</span>',
-            '<span class="flex gap-20 items-center">',
-            '<a class="datepicker__prev<%= (hasPrev) ? "" : " is-disabled" %>" data-prev></a>',
-            '<a class="datepicker__next<%= (hasNext) ? "" : " is-disabled" %>" data-next></a>', 
-            '</span>',
+          '<header class="datepicker__header">',
+          '<span class="flex gap-10 items-center">',
+          '<span class="datepicker__title datepicker__month"><%= renderMonthSelect() %></span>',
+          '<span class="datepicker__title datepicker__year"><%= renderYearSelect() %></span>',
+          '</span>',
+          '<span class="flex gap-20 items-center">',
+          '<a class="datepicker__prev<%= (hasPrev) ? "" : " is-disabled" %>" data-prev></a>',
+          '<a class="datepicker__next<%= (hasNext) ? "" : " is-disabled" %>" data-next></a>',
+          '</span>',
           '</header>'
         ].join(''),
       },
@@ -542,7 +592,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   el.hide()
                 }
               })
-            } 
+            }
           } else {
             end.value = ''
           }
@@ -554,107 +604,118 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-const filterButton = document.querySelectorAll('.filter-button');
-const filterPanels = document.querySelectorAll('.filter-panel');
+  const filterButton = document.querySelectorAll('.filter-button');
+  const filterPanels = document.querySelectorAll('.filter-panel');
 
-if (filterButton.length) {
-  filterButton.forEach(el => {
-    el.addEventListener('click', function () {
-      this.classList.toggle('active');
-      if (this.classList.contains('active')) {
-        disableScroll();
-      } else {
-        enableScroll();
-      }
-    });
-  });
-}
-const xl = window.matchMedia('(max-width: 1024px)')
-window.addEventListener('resize', () => {
-  if (!xl.matches) {
-    const but = document.querySelector('.filter-button.active')
-    if (but) {
-      but.classList.remove('active')
-      enableScroll();
-    }
-  }
-})
-if (filterPanels.length) {
-  filterPanels.forEach(el => {
-    el.addEventListener('click', function () {
-      const button =  event.target.previousElementSibling
-      if (button && button.classList.contains('filter-button')) {
-        button.click();
-        return
-      }
-    });
-    const closeButton = el.querySelector('.close-button');
-    if (closeButton) {
-      closeButton.addEventListener('click', function () {
-        const parent = this.closest('.filter');
-        if (parent) {
-          const button = parent.querySelector('.filter-button');
-          if (button) {
-            button.click();
-            return
-          }
+  if (filterButton.length) {
+    filterButton.forEach(el => {
+      el.addEventListener('click', function () {
+        this.classList.toggle('active');
+        if (this.classList.contains('active')) {
+          disableScroll();
+        } else {
+          enableScroll();
         }
       });
+    });
+  }
+  const xl = window.matchMedia('(max-width: 1024px)')
+  window.addEventListener('resize', () => {
+    if (!xl.matches) {
+      const but = document.querySelector('.filter-button.active')
+      if (but) {
+        but.classList.remove('active')
+        enableScroll();
+      }
     }
-  });
-}
+  })
 
-function animate(options) {
-
-  var start = performance.now();
-
-  requestAnimationFrame(function animate(time) {
-    // timeFraction от 0 до 1
-    var timeFraction = (time - start) / options.duration;
-    if (timeFraction > 1) timeFraction = 1;
-
-    // текущее состояние анимации
-    var progress = options.timing(timeFraction)
-    
-    options.draw(progress);
-
-    if (timeFraction < 1) {
-      requestAnimationFrame(animate);
+  window.addEventListener('scroll', () => {
+    var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+    const num = xl.matches ? 50 : 100
+    if (currentScrollPos > num) {
+      header.classList.add('header--active')
+    } else {
+      header.classList.remove('header--active')
     }
+  })
 
-  });
-}
+  if (filterPanels.length) {
+    filterPanels.forEach(el => {
+      el.addEventListener('click', function () {
+        const button = event.target.previousElementSibling
+        if (button && button.classList.contains('filter-button')) {
+          button.click();
+          return
+        }
+      });
+      const closeButton = el.querySelector('.close-button');
+      if (closeButton) {
+        closeButton.addEventListener('click', function () {
+          const parent = this.closest('.filter');
+          if (parent) {
+            const button = parent.querySelector('.filter-button');
+            if (button) {
+              button.click();
+              return
+            }
+          }
+        });
+      }
+    });
+  }
 
-function animateText(textArea) {
-  let text = textArea.innerHTML;
-  let to = text.length,
-    from = 0;
+  function animate(options) {
 
-  animate({
-    duration: 3000,
-    timing: bounce,
-    draw: function(progress) {
-      let result = (to - from) * progress + from;
-      textArea.innerHTML = text.slice(0, Math.ceil(result))
-    }
-  });
-}
+    var start = performance.now();
+
+    requestAnimationFrame(function animate(time) {
+      // timeFraction от 0 до 1
+      var timeFraction = (time - start) / options.duration;
+      if (timeFraction > 1) timeFraction = 1;
+
+      // текущее состояние анимации
+      var progress = options.timing(timeFraction)
+
+      options.draw(progress);
+
+      if (timeFraction < 1) {
+        requestAnimationFrame(animate);
+      }
+
+    });
+  }
+
+  function animateText(textArea) {
+    let text = textArea.innerHTML;
+    let to = text.length,
+      from = 0;
+
+    animate({
+      duration: 3000,
+      timing: bounce,
+      draw: function (progress) {
+        let result = (to - from) * progress + from;
+        textArea.innerHTML = text.slice(0, Math.ceil(result))
+      }
+    });
+  }
 
 
-function bounce(timeFraction) {
-  for (let a = 0, b = 1; 1; a += b, b /= 2) {
-    if (timeFraction >= (7 - 4 * a) / 11) {
-      return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+  function bounce(timeFraction) {
+    for (let a = 0, b = 1; 1; a += b, b /= 2) {
+      if (timeFraction >= (7 - 4 * a) / 11) {
+        return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+      }
     }
   }
-}
 
-const text = document.querySelector('[data-id="animate-text"]')
+  const text = document.querySelector('[data-id="animate-text"]')
 
-setTimeout(() => {
-  if (text) {
-    animateText(text)
-  }
-},300)
+  setTimeout(() => {
+    if (text) {
+      animateText(text)
+    }
+  }, 300)
 
 });

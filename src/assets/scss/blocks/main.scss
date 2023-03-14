@@ -510,7 +510,7 @@
 }
 
 .footer__block {
-  @apply grid grid-cols-2 xl:grid-cols-1 gap-y-30 gap-x-0 xl:gap-y-10 row-span-3 xl:row-span-1 row-start-1 xl:row-start-auto col-start-2 xl:col-start-auto h-min xl:h-auto;
+  @apply grid grid-cols-2 xl:grid-cols-1 gap-y-30 gap-x-20 xl:gap-y-10 row-span-3 xl:row-span-1 row-start-1 xl:row-start-auto col-start-2 xl:col-start-auto h-min xl:h-auto;
 }
 
 .moonIcon,
